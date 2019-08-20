@@ -3,7 +3,7 @@
 // All arguments are optional. If not defined, the defaults below will be used
 //
 
-$color-heading: $gray-darker;
+$color-heading: $gray-dark;
 
 @mixin heading-xl($font-family: $font-heading, $font-size: 2rem, $line-height: 1.4, $color: $color-heading, $color-link: inherit, $color-link-hover: inherit, $font-weight: 700, $margin: 0 0 0.5em) {
   color: #{$color};

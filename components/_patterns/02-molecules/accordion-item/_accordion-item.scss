@@ -1,5 +1,5 @@
 .accordion-term {
-  border-top: 1px solid $gray-lightest;
+  border-top: 1px solid $gray-xxlight;
   color: $gray-dark;
   cursor: pointer;
   display: block;
@@ -14,11 +14,11 @@
   }
 
   &:hover {
-    color: $gray;
+    color: $gray-medium;
   }
 
   &.is-active {
-    color: $gray;
+    color: $gray-medium;
 
     &::before {
       content: "-";

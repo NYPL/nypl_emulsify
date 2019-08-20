@@ -25,7 +25,7 @@
     &.active,
     &:active,
     &:hover {
-      color: $gray-lighter;
+      color: $gray-xlight;
     }
 
     &::after {
@@ -65,7 +65,7 @@
 }
 
 .main-menu--sub-2 {
-  background-color: $gray-lightest;
+  background-color: $gray-xxlight;
 }
 
 .main-menu__link--sub-2 {
