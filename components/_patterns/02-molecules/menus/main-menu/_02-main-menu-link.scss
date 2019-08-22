@@ -4,7 +4,7 @@
   display: block;
   font-size: 1.2rem;
   line-height: 1.5;
-  padding: $space $space-triple $space $space-double;
+  padding: $space $space-l $space $space-m;
   text-decoration: none;
   font-weight: bold;
 
@@ -17,7 +17,7 @@
     color: $gray-dark;
     display: inline-block;
     font-size: 1.1rem;
-    padding: $space $space-double $space $space;
+    padding: $space $space-m $space $space;
     text-transform: none;
     position: relative;
     width: auto;
@@ -54,13 +54,13 @@
 // A (Nested)
 .main-menu__link--sub {
   color: $gray-dark;
-  padding-left: $space-triple;
+  padding-left: $space-l;
   font-weight: normal;
 
   @include breakpoint($main-menu-medium) {
     color: $gray-light;
     display: block;
-    padding: $space-one-third $space;
+    padding: $space-xs $space;
   }
 }
 
@@ -69,5 +69,5 @@
 }
 
 .main-menu__link--sub-2 {
-  padding-left: $space-quadruple;
+  padding-left: $space-xl;
 }

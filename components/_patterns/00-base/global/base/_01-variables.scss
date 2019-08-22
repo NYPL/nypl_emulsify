@@ -10,19 +10,11 @@
 // Spacing
 $space: 1rem;
 
-// times
-$space-double: $space*2;
-$space-triple: $space*3;
-$space-quadruple: $space*4;
-$space-quintuple: $space*5;
-$space-sextuple: $space*6;
-$space-septuple: $space*7;
-
-// divided
-$space-one-half: $space/2;
-$space-one-third: $space/3;
-$space-one-fourth: $space/4;
-$space-one-fifth: $space/5;
-$space-one-sixth: $space/6;
-$space-one-seventh: $space/7;
-$space-one-eighth: $space/8;
+// Spacing variants
+$space-xxs: $space/4;
+$space-xs: $space/2;
+$space-s: $space*1;
+$space-m: $space*1.5;
+$space-l: $space*2;
+$space-xl: $space*4;
+$space-xxl: $space*4.5;
