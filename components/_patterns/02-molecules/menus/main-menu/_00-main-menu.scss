@@ -44,11 +44,11 @@ $main-menu-medium: 43em;
   border-bottom: none;
   height: 0;
   overflow: hidden;
-  background-color: $near-white;
+  background-color: $white;
   width: 100%;
 
   @include breakpoint($main-menu-medium) {
-    background-color: $gray-lightest;
+    background-color: $gray-xxlight;
     display: none;
     height: auto;
     left: 0;

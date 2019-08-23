@@ -22,7 +22,7 @@
 
   &:hover {
     .main-menu__link::after {
-      color: $gray;
+      color: $gray-medium;
     }
   }
 }
@@ -59,7 +59,7 @@
   // See main-menu.js
   &--open {
     background-color: $black;
-    color: $near-white;
+    color: $white;
 
     &::after {
       border-top-color: transparent;
