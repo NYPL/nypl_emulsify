@@ -2,12 +2,10 @@
 // General Variables
 // Note: colors should go into
 // components/_patterns/00-base/global/01-colors/_color-vars.scss
-// and breakpoint related vars into
+// breakpoint related vars into
 // components/_patterns/00-base/_breakpoints.scss
-
-// Fonts
-$font-body: Georgia, Times, "Times New Roman", serif;
-$font-heading: "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+// and typography related vars into
+// components/_patterns/00-base/_05-typgraphy.scss
 
 // Spacing
 $space: 1rem;
