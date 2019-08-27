@@ -1,0 +1,7 @@
+{% set ib_base_class = ib_base_class|default('date-tile') %}
+
+<div {{ bem(ib_base_class, (ib_modifiers), ib_blockname) }} aria-hidden="true">
+  {% include "@atoms/02-text/text/04-caption.twig" with {
+    "caption_content": "Ongoing",
+  } %}
+</div>

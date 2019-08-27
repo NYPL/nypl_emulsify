@@ -1,0 +1,19 @@
+.date-tile {
+  align-content: center;
+  border-radius: 2px;
+  border: 1px solid $black;
+  display: inline-flex;
+  height: 60px;
+  flex-wrap: wrap;
+  padding: $space-xxs $space-s;
+  justify-content: center;
+  text-align: center;
+
+  & > p {
+    padding: 0 $space-s;
+  }
+}
+
+.date-tile__date {
+  padding: $space-xxs 0;
+}
