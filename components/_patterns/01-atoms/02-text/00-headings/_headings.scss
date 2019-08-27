@@ -3,9 +3,7 @@
 // All arguments are optional. If not defined, the defaults below will be used
 //
 
-$color-heading: $gray-dark;
-
-@mixin heading-xl($font-family: $font-heading, $font-size: 2rem, $line-height: 1.4, $color: $color-heading, $color-link: inherit, $color-link-hover: inherit, $font-weight: 700, $margin: 0 0 0.5em) {
+@mixin page-title($font-family: $font-heading, $font-size: 2.25rem, $line-height: 1.1, $color: $black, $color-link: inherit, $color-link-hover: inherit, $font-weight: 400, $margin: 0 0 0.5em) {
   color: #{$color};
   font-family: #{$font-family};
   font-weight: #{$font-weight};
@@ -24,7 +22,7 @@ $color-heading: $gray-dark;
   }
 }
 
-@mixin heading-large($font-family: $font-heading, $font-size: 1.8rem, $line-height: 1.4, $color: $color-heading, $color-link: inherit, $color-link-hover: inherit, $font-weight: 700, $margin: 0 0 0.5em) {
+@mixin section-title($font-family: $font-heading, $font-size: 1.68rem, $line-height: 1, $color: $black, $color-link: inherit, $color-link-hover: inherit, $font-weight: 600, $margin: 0 0 0.5em) {
   color: #{$color};
   font-family: #{$font-family};
   font-weight: #{$font-weight};
@@ -43,7 +41,7 @@ $color-heading: $gray-dark;
   }
 }
 
-@mixin heading-medium($font-family: $font-heading, $font-size: 1.4rem, $line-height: 1.6, $color: $color-heading, $color-link: inherit, $color-link-hover: inherit, $font-weight: 700, $margin: 0 0 0.5em) {
+@mixin card-title($font-family: $font-heading, $font-size: 1.25rem, $line-height: 1, $color: $black, $color-link: inherit, $color-link-hover: inherit, $font-weight: 600, $margin: 0 0 0.5em) {
   color: #{$color};
   font-family: #{$font-family};
   font-weight: #{$font-weight};
@@ -62,7 +60,7 @@ $color-heading: $gray-dark;
   }
 }
 
-@mixin heading-small($font-family: $font-heading, $font-size: 1.2rem, $line-height: 1.6, $color: $color-heading, $color-link: inherit, $color-link-hover: inherit, $font-weight: 600, $margin: 0 0 0.5em) {
+@mixin heading-small($font-family: $font-heading, $font-size: 1rem, $line-height: 1, $color: $black, $color-link: inherit, $color-link-hover: inherit, $font-weight: 600, $margin: 0 0 0.5em) {
   color: #{$color};
   font-family: #{$font-family};
   font-weight: #{$font-weight};
@@ -81,7 +79,7 @@ $color-heading: $gray-dark;
   }
 }
 
-@mixin heading-xs($font-family: $font-heading, $font-size: 1.1rem, $line-height: 2, $color: $color-heading, $color-link: inherit, $color-link-hover: inherit, $font-weight: 600, $margin: 0 0 0.5em) {
+@mixin heading-xs($font-family: $font-heading, $font-size: 1.1rem, $line-height: 2, $color: $black, $color-link: inherit, $color-link-hover: inherit, $font-weight: 600, $margin: 0 0 0.5em) {
   color: #{$color};
   font-family: #{$font-family};
   font-weight: #{$font-weight};
@@ -101,15 +99,15 @@ $color-heading: $gray-dark;
 }
 
 .h1 {
-  @include heading-xl();
+  @include page-title();
 }
 
 .h2 {
-  @include heading-large();
+  @include section-title();
 }
 
 .h3 {
-  @include heading-medium();
+  @include card-title();
 }
 
 .h4 {
@@ -120,8 +118,6 @@ $color-heading: $gray-dark;
 .h6 {
   @include heading-xs();
 }
-
-// TODO: BEM selectors should be applied to wysiwyg-created content
 
 .text-long {
   h1 {
