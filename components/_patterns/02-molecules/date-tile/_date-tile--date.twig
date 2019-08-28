@@ -1,0 +1,10 @@
+{% set ib_base_class = ib_base_class|default('date-tile') %}
+
+<div {{ bem('month', [], ib_base_class) }}>
+  {{ datetile__month }}
+</div>
+{% if datetile__day %}
+  <div {{ bem('day', [], ib_base_class) }}>
+    {{ datetile__day }}
+  </div>
+{% endif %}

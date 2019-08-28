@@ -1,0 +1,45 @@
+{# {% set ib_base_class = ib_base_class|default('date-tile') %}
+
+<div {{ bem(ib_base_class, (ib_modifiers), ib_blockname) }} aria-hidden="true">
+  <div class="date-tile__date">
+    {% include "@atoms/02-text/text/04-caption.twig" with {
+      "caption_content": datetile_date|date('M'),
+    } %}
+    {% include "@atoms/02-text/text/01-paragraph.twig" with {
+      "paragraph_content": datetile_date|date('n'),
+      "paragraph_base_class": 'h4'
+    } %}
+  </div>
+</div> #}
+
+
+{% set ib_base_class = ib_base_class|default('date-tile') %}
+
+<div {{ bem(ib_base_class, [], ib_blockname) }} aria-hidden="true">
+  <div {{ bem('date', [], ib_base_class) }}>
+    {% if ongoing == true %}
+      {% include "@molecules/date-tile/_date-tile--date.twig" with {
+        datetile__month: 'Ongoing',
+      } %}
+    {% elseif date(datetile_start_date) < date() and date(datetile_end_date) > date() %}
+      {% include "@molecules/date-tile/_date-tile--date.twig" with {
+        datetile__month: 'Open',
+        datetile__day: 'Now',
+      } %}
+    {% else %}
+      {% include "@molecules/date-tile/_date-tile--date.twig" with {
+        datetile__month: datetile_start_date|date('M'),
+        datetile__day: datetile_start_date|date('n'),
+      } %}
+    {% endif %}
+  </div>
+  {% if datetile_end_date %}
+    <span {{ bem('separator', [], ib_base_class) }}>–</span>
+    <div {{ bem('date', [], ib_base_class) }}>
+      {% include "@molecules/date-tile/_date-tile--date.twig" with {
+        datetile__month: datetile_end_date|date('M'),
+        datetile__day: datetile_end_date|date('n'),
+      } %}
+    </div>
+  {% endif %}
+</div>
