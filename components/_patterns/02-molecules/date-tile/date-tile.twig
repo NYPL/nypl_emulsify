@@ -25,7 +25,7 @@
       } %}
     {% endif %}
   </div>
-  {% if date_tile__end_date %}
+  {% if (date_tile__end_date) and (date_tile__start_date|date('M/d') != date_tile__end_date|date('M/d')) %}
     <span {{ bem('separator', [], date_tile__base_class) }}>–</span>
     <div {{ bem('date', [], date_tile__base_class) }}>
       {% include "@molecules/date-tile/_date-tile--date.twig" with {
