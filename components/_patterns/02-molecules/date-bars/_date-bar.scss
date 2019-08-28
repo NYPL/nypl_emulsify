@@ -1,0 +1,25 @@
+.date-bar {
+  align-items: center;
+  background-color: $color-success;
+  border: 1px solid $color-success;
+  color: $white;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1em;
+  font-weight: 600;
+  height: 80px;
+  list-style-type: none;
+  justify-content: center;
+  margin-left: -1px;
+  margin-right: -1px;
+  padding: $space-s $space;
+
+  li {
+    flex: 0 0 100%;
+  }
+
+  &--ended {
+    background-color: $color-error;
+    border: 1px solid $color-error;
+  }
+}
