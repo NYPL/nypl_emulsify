@@ -1,6 +1,4 @@
-event_date:
-  "2019-12-17"
-event_date_time_start:
-  "12:00:00"
-event_date_time_end:
-  "14:00:00"
+event_date_start:
+  "2019-11-15 12:00:00"
+event_date_end:
+  "2019-11-15 14:00:00"

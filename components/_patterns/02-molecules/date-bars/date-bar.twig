@@ -3,19 +3,17 @@
  * @file
  * Event address bar for displaying date and time information for events.
  *
- * Available variables:
- * - ended: (optional) Boolean. If true, display string saying event has ended.
  */
 #}
 
-{% set card_base_class = 'date-bar' %}
+{% set date_bar_base_class = 'date-bar' %}
 
-<ul {{ bem(card_base_class, (card_modifiers), card_blockname) }}>
-  {% if card_modifiers == true %}
+<ul {{ bem(date_bar_base_class , (date_bar_modifiers), date_bar_blockname) }}>
+  {% if date(event_date_end) < date() %}
     <li>The event has ended</li>
   {% else %}
-    <li>{{ event_date|date("l, F d") }}</li> 
+    <li>{{ event_date_start|date("l, F d") }}</li> 
 
-    <li>{{ event_date_time_start|date("g:iA") }}–{{ event_date_time_end|date("g:iA") }}</li>
+    <li>{{ event_date_start|date("g:iA") }}–{{ event_date_end|date("g:iA") }}</li>
   {% endif %}
 </ul>

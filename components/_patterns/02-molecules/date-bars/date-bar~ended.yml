@@ -1,9 +1,7 @@
-card_modifiers:
+event_date_start:
+  "2015-12-17 12:00:00"
+event_date_end:
+  "2015-12-17 14:00:00"
+date_bar_modifiers:
   1:
     ended
-event_date:
-  "2010-04-19"
-event_date_time_start:
-  "14:00:00"
-event_date_time_end:
-  "18:00:00"
