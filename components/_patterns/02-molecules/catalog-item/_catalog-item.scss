@@ -1,0 +1,42 @@
+.catalog-item {
+  border-bottom: 1px solid $gray-light;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: $space-l;
+
+  &__icon {
+    align-self: stretch;
+    background-color: $gray-xlight;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid $gray-xlight;
+    display: flex;
+    flex: 0 0 200px;
+    justify-content: center;
+    padding: $space $space;
+    margin-right: $space;
+
+    &--book {
+      background-image: url('../images/icons/book-purple.svg');
+    }
+
+    &--cd,
+    &--audiobook {
+      background-image: url('../images/icons/cd-purple.svg');
+    }
+
+    &--movie {
+      background-image: url('../images/icons/movie-purple.svg');
+    }
+  }
+
+  &__content {
+    flex: 2 1 auto;
+    margin-right: $space;
+  }
+
+  &__ctas {
+    flex: 1 1 auto;
+  }
+}

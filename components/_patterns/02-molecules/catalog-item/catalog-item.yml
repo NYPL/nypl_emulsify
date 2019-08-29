@@ -1,0 +1,30 @@
+media_type:
+  "book"
+
+title:
+  "Catalog item title"
+
+author:
+  first:
+    "First"
+  last:
+    "Last"
+
+year:
+  "Catalog item year"
+
+type_of_file:
+  "File type"
+
+availability:
+  true
+
+detail_link:
+  "#"
+
+view_link:
+  "#"
+
+add_to_list_link:
+  "#"
+
