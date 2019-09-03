@@ -1,0 +1,12 @@
+event_date_start: '2019-11-15 12:00:00'
+event_date_end: '2019-11-15 14:00:00'
+address_bar__heading: 'Schomburg Center for Research in Black Culture'
+address_bar__directions: '#'
+address_bar__accessibility: 'Fully accessible to wheelchairs'
+address_bar__secondary_links:
+  - address_bar__secondary_link__text: Add To Calendar
+    address_bar__secondary_link__url: '#'
+  - address_bar__secondary_link__text: Share
+    address_bar__secondary_link__url: '#'
+address_bar__primary_link__text: Register
+address_bar__primary_link__url: '#'

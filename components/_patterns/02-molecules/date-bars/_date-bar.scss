@@ -1,15 +1,13 @@
-.date-bar {
+.date-bar,
+.address-bar__date-bar {
   align-items: center;
   background-color: $color-success;
-  border: 1px solid $color-success;
   color: $white;
   display: flex;
   flex-wrap: wrap;
   font-size: 1em;
   font-weight: 600;
   list-style-type: none;
-  margin-left: -1px;
-  margin-right: -1px;
   min-height: 80px;
   padding: $space-s $space;
 
@@ -19,6 +17,5 @@
 
   &--ended {
     background-color: $color-error;
-    border: 1px solid $color-error;
   }
 }

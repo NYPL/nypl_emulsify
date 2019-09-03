@@ -1,0 +1,37 @@
+$address-bar-border: 1px solid $gray-light;
+
+.address-bar {
+  box-shadow: 0 4px 4px rgba($black, 0.25);
+  border-bottom: $address-bar-border;
+
+  &__date-bar {
+    //
+  }
+
+  &__content {
+    border-right: $address-bar-border;
+    border-bottom: $address-bar-border;
+    border-left: $address-bar-border;
+    padding: $space-xs;
+  }
+
+  &__details {
+    padding: 0 $space-xs;
+  }
+
+  &__link {
+    display: block;
+
+    & + & {
+      margin-top: $space-xs;
+    }
+
+    &--secondary {
+      @include button--outline;
+    }
+
+    &--primary {
+      @include button--filled;
+    }
+  }
+}
