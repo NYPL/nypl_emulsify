@@ -12,12 +12,12 @@
   {% set date_bar_modifiers = ['ended'] %}
 {% endif %}
 
-<ul {{ bem(date_bar_base_class , (date_bar_modifiers), date_bar_blockname) }}>
+<div {{ bem(date_bar_base_class , (date_bar_modifiers), date_bar_blockname) }}>
   {% if date(event_date_end) < date() %}
-    <li>The event has ended</li>
+    The event has ended
   {% else %}
-    <li>{{ event_date_start|date("l, F d") }}</li> 
+    <span>{{ event_date_start|date("l, F d") }}</span> 
 
-    <li>{{ event_date_start|date("g:iA") }}–{{ event_date_end|date("g:iA") }}</li>
+    <span>{{ event_date_start|date("g:iA") }}–{{ event_date_end|date("g:iA") }}</span>
   {% endif %}
-</ul>
+</div>
