@@ -1,40 +1,58 @@
+{#
+ # Variables:
+ # address_bar__date_start - The start date/time.
+ # address_bar__date_end - The end date/time.
+ # address_bar__heading - The heading.
+ # address_bar__directions_url - The link to directions.
+ # address_bar__accessibility - The accessibility level.
+ # address_bar__secondary_links - An array of secondary links.
+ # - address_bar__secondary_link__text - Secondary link text.
+ # - address_bar__secondary_link__url - Secondary link url.
+ # address_bar__primary_link__text - Primary link text.
+ # address_bar__primary_link__url - Primary link url.
+ #}
+
 {% set address_bar__base_class = 'address-bar' %}
 {% set link_blockname = address_bar__base_class %}
 {% set heading_blockname = address_bar__base_class %}
+{% set date_bar_blockname = address_bar__base_class %}
 
 <div {{ bem(address_bar__base_class) }}>
+  {# Date Bar #}
   {% include "@molecules/date-bars/date-bar.twig" with {
-    date_bar_blockname: address_bar__base_class,
+    event_date_start: address_bar__date_start,
+    event_date_end: address_bar__date_end,
   } %}
   <div {{ bem('content', [], address_bar__base_class) }}>
     <div {{ bem('details', [], address_bar__base_class) }}>
-      {% include "@atoms/02-text/00-headings/_heading.twig" with {
-        heading_level: '3',
-        heading: address_bar__heading,
-        heading_base_class: 'heading',
+      {# Heading #}
+      {% include "@molecules/address-bar/partials/_address-bar--heading.twig" with {
+        address_bar__heading: address_bar__heading,
       } %}
+      {# Directions Link #}
       {% include "@atoms/01-links/link/link.twig" with {
         link_base_class: 'directions',
         link_content: 'Directions',
         link_url: address_bar__directions_url,
       } %}
-      <div {{ bem('accessibility-rating', [], address_bar__base_class) }}>
-        <strong>Accessibility</strong><br />
-        <span {{ bem('accessibility', [], address_bar__base_class) }}>{{ address_bar__accessibility }}</span>
-      </div>
+      {# Accessibility level #}
+      {% include "@molecules/address-bar/partials/_address-bar--accessibility.twig" with {
+        accessibility_level: address_bar__accessibility,
+      } %}
     </div>
     <div {{ bem('links', [], address_bar__base_class) }}>
+      {# Secondary links #}
       {% for link in address_bar__secondary_links %}
-        {% include "@atoms/01-links/link/link.twig" with {
-          link_modifiers: ['secondary'],
-          link_content: link.address_bar__secondary_link__text,
-          link_url: link.address_bar__secondary_link__url,
+        {% include "@molecules/address-bar/partials/_address-bar--links.twig" with {
+          address_bar__link__text: link.address_bar__secondary_link__text,
+          address_bar__link__url: link.address_bar__secondary_link__url,
         } %}
       {% endfor %}
-      {% include "@atoms/01-links/link/link.twig" with {
-        link_modifiers: ['primary'],
-        link_content: address_bar__primary_link__text,
-        link_url: address_bar__primary_link__url,
+      {# Primary links #}
+      {% include "@molecules/address-bar/partials/_address-bar--links.twig" with {
+        address_bar__link_modifiers: ['primary'],
+        address_bar__link__text: address_bar__primary_link__text,
+        address_bar__link__url: address_bar__primary_link__url,
       } %}
     </div>
   </div>
