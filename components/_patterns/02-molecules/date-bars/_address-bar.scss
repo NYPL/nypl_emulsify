@@ -27,9 +27,14 @@ $address-bar-border: 1px solid $gray-light;
 
   &__directions {
     @include link--more;
-    // display: block;
-    // text-decoration: none;
+
     margin: 0 0 $space;
+  }
+
+  &__links {
+    .address-bar__details + & {
+      margin-top: $space-s;
+    }
   }
 
   &__link {
