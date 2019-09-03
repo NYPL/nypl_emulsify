@@ -19,13 +19,16 @@
 
 <div {{ bem(address_bar__base_class) }}>
   {# Date Bar #}
-  {% include "@molecules/date-bars/date-bar.twig" with {
-    event_date_start: address_bar__date_start,
-    event_date_end: address_bar__date_end,
-  } %}
+  {% if address_bar__date_start %}
+    {% include "@molecules/date-bars/date-bar.twig" with {
+      event_date_start: address_bar__date_start,
+      event_date_end: address_bar__date_end,
+    } %}
+  {% endif %}
   <div {{ bem('content', [], address_bar__base_class) }}>
     <div {{ bem('details', [], address_bar__base_class) }}>
       {# Heading #}
+
       {% include "@molecules/address-bar/partials/_address-bar--heading.twig" with {
         address_bar__heading: address_bar__heading,
       } %}
