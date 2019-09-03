@@ -18,9 +18,9 @@
         link_content: 'Directions',
         link_url: address_bar__directions_url,
       } %}
-      <div {{ bem('accessibility', [], address_bar__base_class) }}>
+      <div {{ bem('accessibility-rating', [], address_bar__base_class) }}>
         <strong>Accessibility</strong><br />
-        {{ address_bar__accessibility }}
+        <span {{ bem('accessibility', [], address_bar__base_class) }}>{{ address_bar__accessibility }}</span>
       </div>
     </div>
     <div {{ bem('links', [], address_bar__base_class) }}>

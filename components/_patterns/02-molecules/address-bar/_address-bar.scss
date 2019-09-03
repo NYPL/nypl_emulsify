@@ -31,6 +31,10 @@ $address-bar-border: 1px solid $gray-light;
     margin: 0 0 $space;
   }
 
+  &__accessibility {
+    letter-spacing: 0.44px;
+  }
+
   &__links {
     .address-bar__details + & {
       margin-top: $space-s;
