@@ -15,3 +15,9 @@ days:
   - day: 'Sunday'
     hours: 'Closed'
 accessibility_level__description: 'Other accommodations such as ASL interpretation and real-time (CART) captioning can be arranged with a minimum of two weeks notice. Please email accessibility@nypl.org with accommodation requests or questions.'
+location__amenities:
+  - WiFi
+  - Lorem ipsum amenity
+  - Lorem amenity
+  - Lorem ipsum amenity
+  - Lorem amenity

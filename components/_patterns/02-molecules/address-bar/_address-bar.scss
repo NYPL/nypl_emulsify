@@ -17,6 +17,10 @@ $address-bar-border: 1px solid $gray-light;
     border-bottom: $address-bar-border;
     border-left: $address-bar-border;
     padding: $space-xs;
+
+    > *:last-child {
+      margin-bottom: 0;
+    }
   }
 
   &__details {
@@ -66,6 +70,26 @@ $address-bar-border: 1px solid $gray-light;
     letter-spacing: 0.44px;
   }
 
+  &__amenities {
+    @include address-bar-vertical-spacing;
+
+    margin-top: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  &__amenity {
+    position: relative;
+    padding-left: $space-s;
+    letter-spacing: 0.44px;
+
+    &::before {
+      position: absolute;
+      left: 0;
+      content: '-';
+    }
+  }
+
   &__ctas {
     @include address-bar-vertical-spacing;
   }
@@ -83,12 +107,6 @@ $address-bar-border: 1px solid $gray-light;
 
     &--primary {
       @include button--filled;
-    }
-  }
-
-  &__content {
-    > *:last-child {
-      margin-bottom: 0;
     }
   }
 }

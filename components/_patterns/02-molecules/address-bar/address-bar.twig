@@ -41,6 +41,10 @@
           accessibility_level: address_bar__accessibility,
         } %}
       {% endif %}
+      {# Amenities #}
+      {% if location__amenities.0|length %}
+        {% include "@molecules/address-bar/partials/_address-bar--amenities.twig" %}
+      {% endif %}
     </div>
     {# CTAs #}
     {% if address_bar__cta__secondary.0.address_bar__cta__secondary__url or address_bar__cta__primary__url or address_bar__cta__primary__alt_text %}
