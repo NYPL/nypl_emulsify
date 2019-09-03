@@ -8,6 +8,10 @@
 
 {% set date_bar_base_class = 'date-bar' %}
 
+{% if date(event_date_end) < date() %}
+  {% set date_bar_modifiers = ['ended'] %}
+{% endif %}
+
 <ul {{ bem(date_bar_base_class , (date_bar_modifiers), date_bar_blockname) }}>
   {% if date(event_date_end) < date() %}
     <li>The event has ended</li>
