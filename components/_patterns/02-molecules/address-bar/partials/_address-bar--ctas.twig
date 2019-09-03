@@ -1,5 +1,6 @@
 {% if address_bar__link__url %}
   {% include "@atoms/01-links/link/link.twig" with {
+    link_base_class: 'cta',
     link_modifiers: address_bar__link_modifiers|default(['secondary']),
     link_content: address_bar__link__text,
     link_url: address_bar__link__url,

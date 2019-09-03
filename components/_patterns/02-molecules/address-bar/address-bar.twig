@@ -15,6 +15,7 @@
 {% set address_bar__base_class = 'address-bar' %}
 {% set link_blockname = address_bar__base_class %}
 {% set date_bar_blockname = address_bar__base_class %}
+{% set date_bar_blockname = address_bar__base_class %}
 
 <div {{ bem(address_bar__base_class) }}>
   {# Date Bar #}
@@ -29,6 +30,10 @@
       {# Location information #}
       {% if address_bar__location %}
         {% include "@molecules/address-bar/partials/_address-bar--location.twig" %}
+      {% endif %}
+      {# Hours #}
+      {% if days.0.day %}
+        {% include "@molecules/address-bar/partials/_address-bar--hours.twig" %}
       {% endif %}
       {# Accessibility level #}
       {% if address_bar__accessibility %}

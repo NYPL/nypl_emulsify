@@ -1,5 +1,9 @@
 $address-bar-border: 1px solid $gray-light;
 
+@mixin address-bar-vertical-spacing {
+  margin-bottom: $space;
+}
+
 .address-bar {
   box-shadow: 0 4px 4px rgba($black, 0.25);
   border-bottom: $address-bar-border;
@@ -20,28 +24,43 @@ $address-bar-border: 1px solid $gray-light;
   }
 
   &__heading {
+    @include address-bar-vertical-spacing;
+
     font-size: 20px;
     line-height: 1.25;
-    margin: 0 0 $space-xs;
   }
 
   &__directions {
     @include link--more;
+    @include address-bar-vertical-spacing;
+  }
 
-    margin: 0 0 $space;
+  &__location-hours {
+    @include address-bar-vertical-spacing;
+  }
+
+  &__hours {
+    border-spacing: 0;
+  }
+
+  &__hours-day {
+    text-align: left;
+    font-weight: normal;
+  }
+
+  &__accessibility-rating {
+    @include address-bar-vertical-spacing;
   }
 
   &__accessibility {
     letter-spacing: 0.44px;
   }
 
-  &__links {
-    .address-bar__details + & {
-      margin-top: $space-s;
-    }
+  &__ctas {
+    @include address-bar-vertical-spacing;
   }
 
-  &__link {
+  &__cta {
     display: block;
 
     & + & {
@@ -54,6 +73,12 @@ $address-bar-border: 1px solid $gray-light;
 
     &--primary {
       @include button--filled;
+    }
+  }
+
+  &__content {
+    > *:last-child {
+      margin-bottom: 0;
     }
   }
 }
