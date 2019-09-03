@@ -54,11 +54,15 @@ $address-bar-border: 1px solid $gray-light;
     letter-spacing: 0.44px;
   }
 
-  &__accessibility-rating {
+  &__accessibility {
     @include address-bar-vertical-spacing;
   }
 
-  &__accessibility {
+  &__accessibility-rating {
+    letter-spacing: 0.44px;
+  }
+
+  &__accessibility-description {
     letter-spacing: 0.44px;
   }
 
