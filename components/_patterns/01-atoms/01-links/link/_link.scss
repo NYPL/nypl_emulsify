@@ -10,6 +10,34 @@ $color-link--hover: $nypl-blue-dark;
   }
 }
 
+@mixin link--more {
+  display: inline-block;
+  position: relative;
+  padding-right: 1rem;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 1.21;
+  letter-spacing: 1.5px;
+
+  &::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    right: 0.3rem;
+    content: '';
+    border: 2px solid $nypl-blue-regular;
+    border-bottom: 0;
+    border-left: 0;
+    height: 8px;
+    width: 8px;
+  }
+}
+
 .link {
   @include link;
+}
+
+.link--more {
+  @include link--more;
 }

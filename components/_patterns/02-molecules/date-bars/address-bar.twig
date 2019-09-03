@@ -6,8 +6,18 @@
   } %}
   <div {{ bem('content', [], address_bar__base_class) }}>
     <div {{ bem('details', [], address_bar__base_class) }}>
-      {{ address_bar__heading }}
-      {{ address_bar__directions }}
+      {% include "@atoms/02-text/00-headings/_heading.twig" with {
+        heading_level: '3',
+        heading: address_bar__heading,
+        heading_base_class: 'heading',
+        heading_blockname: address_bar__base_class,
+      } %}
+      {% include "@atoms/01-links/link/link.twig" with {
+        link_blockname: address_bar__base_class,
+        link_base_class: 'directions',
+        link_content: 'Directions',
+        link_url: address_bar__directions_url,
+      } %}
       {{ address_bar__accessibility }}
     </div>
     <div {{ bem('links', [], address_bar__base_class) }}>

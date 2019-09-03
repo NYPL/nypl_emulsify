@@ -5,7 +5,7 @@ $address-bar-border: 1px solid $gray-light;
   border-bottom: $address-bar-border;
 
   &__date-bar {
-    //
+    margin: 0; // This is to remove browser styles of lists.
   }
 
   &__content {
@@ -16,7 +16,20 @@ $address-bar-border: 1px solid $gray-light;
   }
 
   &__details {
-    padding: 0 $space-xs;
+    padding: $space-xs;
+  }
+
+  &__heading {
+    font-size: 20px;
+    line-height: 1.25;
+    margin: 0 0 $space-xs;
+  }
+
+  &__directions {
+    @include link--more;
+    // display: block;
+    // text-decoration: none;
+    margin: 0 0 $space;
   }
 
   &__link {
