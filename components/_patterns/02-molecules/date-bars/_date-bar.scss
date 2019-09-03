@@ -1,7 +1,6 @@
 .date-bar {
   align-items: center;
   background-color: $color-success;
-  border: 1px solid $color-success;
   color: $white;
   display: flex;
   flex-wrap: wrap;
@@ -19,6 +18,5 @@
 
   &--ended {
     background-color: $color-error;
-    border: 1px solid $color-error;
   }
 }
