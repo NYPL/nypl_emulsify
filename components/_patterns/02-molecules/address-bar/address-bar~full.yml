@@ -1,4 +1,5 @@
 address_bar__address: '515 Malcolm X Blvd, New York, NY 10037'
+address_bar__phone_number: '555-123-4567'
 days:
   - day: 'Monday'
     hours: '7:00AM - 7:00PM'
