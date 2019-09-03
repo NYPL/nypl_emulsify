@@ -1,4 +1,6 @@
 {% set address_bar__base_class = 'address-bar' %}
+{% set link_blockname = address_bar__base_class %}
+{% set heading_blockname = address_bar__base_class %}
 
 <div {{ bem(address_bar__base_class) }}>
   {% include "@molecules/date-bars/date-bar.twig" with {
@@ -10,10 +12,8 @@
         heading_level: '3',
         heading: address_bar__heading,
         heading_base_class: 'heading',
-        heading_blockname: address_bar__base_class,
       } %}
       {% include "@atoms/01-links/link/link.twig" with {
-        link_blockname: address_bar__base_class,
         link_base_class: 'directions',
         link_content: 'Directions',
         link_url: address_bar__directions_url,
@@ -26,14 +26,12 @@
     <div {{ bem('links', [], address_bar__base_class) }}>
       {% for link in address_bar__secondary_links %}
         {% include "@atoms/01-links/link/link.twig" with {
-          link_blockname: address_bar__base_class,
           link_modifiers: ['secondary'],
           link_content: link.address_bar__secondary_link__text,
           link_url: link.address_bar__secondary_link__url,
         } %}
       {% endfor %}
       {% include "@atoms/01-links/link/link.twig" with {
-        link_blockname: address_bar__base_class,
         link_modifiers: ['primary'],
         link_content: address_bar__primary_link__text,
         link_url: address_bar__primary_link__url,
