@@ -14,6 +14,7 @@ $color-link--hover: $nypl-blue-dark;
   display: inline-block;
   position: relative;
   padding-right: 1rem;
+  color: $color-link;
   text-decoration: none;
   font-size: 14px;
   line-height: 1.21;
@@ -26,11 +27,19 @@ $color-link--hover: $nypl-blue-dark;
     transform: translateY(-50%) rotate(45deg);
     right: 0.3rem;
     content: '';
-    border: 2px solid $nypl-blue-regular;
+    border: 2px solid $color-link;
     border-bottom: 0;
     border-left: 0;
     height: 8px;
     width: 8px;
+  }
+
+  &:hover {
+    color: $color-link--hover;
+
+    &::after {
+      border-color: $color-link--hover;
+    }
   }
 }
 

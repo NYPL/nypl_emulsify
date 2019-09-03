@@ -1,12 +1,12 @@
 address_bar__date_start: '2119-11-15 12:00:00'
 address_bar__date_end: '2119-11-15 14:00:00'
-address_bar__heading: 'Schomburg Center for Research in Black Culture'
+address_bar__location: 'Schomburg Center for Research in Black Culture'
 address_bar__directions_url: '#'
 address_bar__accessibility: 'Fully accessible to wheelchairs'
-address_bar__secondary_links:
-  - address_bar__secondary_link__text: Add To Calendar
-    address_bar__secondary_link__url: '#'
-  - address_bar__secondary_link__text: Share
-    address_bar__secondary_link__url: '#'
-address_bar__primary_link__text: Register
-address_bar__primary_link__url: '#'
+address_bar__cta__secondary:
+  - address_bar__cta__secondary__text: Add To Calendar
+    address_bar__cta__secondary__url: '#'
+  - address_bar__cta__secondary__text: Share
+    address_bar__cta__secondary__url: '#'
+address_bar__cta__primary__text: Register
+address_bar__cta__primary__url: '#'

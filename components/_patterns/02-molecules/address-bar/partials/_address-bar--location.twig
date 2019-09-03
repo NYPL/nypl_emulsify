@@ -1,0 +1,19 @@
+{% set heading_blockname = address_bar__base_class %}
+{% set text_blockname = address_bar__base_class %}
+
+{# Heading #}
+{% include "@atoms/02-text/00-headings/_heading.twig" with {
+  heading_level: '3',
+  heading: address_bar__location,
+  heading_base_class: 'heading',
+} %}
+{% include "@atoms/02-text/text/text.twig" with {
+  text_base_class: 'address',
+  text_content: address_bar__address,
+} %}
+{# Directions Link #}
+{% include "@atoms/01-links/link/link.twig" with {
+  link_base_class: 'directions',
+  link_content: 'Directions',
+  link_url: address_bar__directions_url,
+} %}
