@@ -1,19 +1,23 @@
+@mixin button-base {
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  letter-spacing: 1.5px;
+  padding: $space-xs;
+  text-decoration: none;
+  text-align: center;
+}
+
 @mixin button--filled(
   $bg: $nypl-blue-regular,
   $color: $white,
   $hoverBg: darken($bg, 0.25)
 ) {
+  @include button-base;
+
   background-color: $bg;
   border: none;
-  border-radius: 2px;
   color: $color;
-  cursor: pointer;
-  font-size: 14px;
-  letter-spacing: 1.5px;
-  line-height: 2.6;
-  padding: 0 $space-xs;
-  text-decoration: none;
-  text-align: center;
 
   &:visited {
     color: $color;
@@ -25,17 +29,11 @@
 }
 
 @mixin button--outline {
+  @include button-base;
+
   background-color: $white;
   border: 1px solid $gray-light;
-  border-radius: 2px;
   color: inherit;
-  cursor: pointer;
-  font-size: 14px;
-  letter-spacing: 1.5px;
-  line-height: 2.6;
-  padding: 0 $space-xs;
-  text-decoration: none;
-  text-align: center;
 
   &:visited {
     color: inherit;

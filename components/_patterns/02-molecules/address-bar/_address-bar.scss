@@ -5,13 +5,6 @@ $address-bar-border: 1px solid $gray-light;
 }
 
 .address-bar {
-  box-shadow: 0 4px 4px rgba($black, 0.25);
-  border-bottom: $address-bar-border;
-
-  &__date-bar {
-    margin: 0; // This is to remove browser styles of lists.
-  }
-
   &__content {
     border-right: $address-bar-border;
     border-bottom: $address-bar-border;
