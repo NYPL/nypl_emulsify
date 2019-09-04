@@ -1,0 +1,25 @@
+.address-bar {
+  &__heading {
+    @include address-bar-vertical-spacing;
+
+    font-size: 20px;
+    line-height: 1.25;
+    margin-top: 0;
+  }
+
+  &__directions {
+    @include link--more;
+    @include address-bar-vertical-spacing;
+  }
+
+  &__phone {
+    font-size: 14px;
+    letter-spacing: 1.5px;
+  }
+
+  &__phone-number {
+    font-size: 16px;
+    letter-spacing: 0.44px;
+    color: $nypl-blue-regular;
+  }
+}

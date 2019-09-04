@@ -1,0 +1,21 @@
+.address-bar {
+  &__amenities {
+    @include address-bar-vertical-spacing;
+
+    margin-top: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  &__amenity {
+    position: relative;
+    padding-left: $space-s;
+    letter-spacing: 0.44px;
+
+    &::before {
+      position: absolute;
+      left: 0;
+      content: '-';
+    }
+  }
+}
