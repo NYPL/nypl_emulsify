@@ -16,8 +16,20 @@
   {% if date(event_date_end) < date() %}
     The event has ended
   {% else %}
-    <span>{{ event_date_start|date("l, F d") }}</span> 
+    {% include "@atoms/02-text/00-headings/_heading.twig" with {
+      heading_level: '2',
+      heading: event_date_start|date("l, F d"),
+      heading_base_class: 'date',
+      heading_blockname: date_bar_base_class,
+    } %}
 
-    <span>{{ event_date_start|date("g:iA") }}–{{ event_date_end|date("g:iA") }}</span>
+    {% set event_time_range = "#{ event_date_start|date("g:iA") }–#{ event_date_end|date("g:iA")}" %}
+
+    {% include "@atoms/02-text/00-headings/_heading.twig" with {
+      heading_level: '2',
+      heading: event_time_range,
+      heading_base_class: 'date',
+      heading_blockname: date_bar_base_class,
+    } %}
   {% endif %}
 </div>
