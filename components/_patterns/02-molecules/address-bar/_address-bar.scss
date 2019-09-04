@@ -39,6 +39,17 @@ $address-bar-border: 1px solid $gray-light;
     @include address-bar-vertical-spacing;
   }
 
+  &__phone {
+    font-size: 14px;
+    letter-spacing: 1.5px;
+  }
+
+  &__phone-number {
+    font-size: 16px;
+    letter-spacing: 0.44px;
+    color: $nypl-blue-regular;
+  }
+
   &__location-hours {
     @include address-bar-vertical-spacing;
   }

@@ -25,10 +25,10 @@
 {% endif %}
 {# Phone number #}
 {% if address_bar__phone_number %}
-  <div>
+  <div {{ bem('phone', [], address_bar__base_class) }}>
     Call
     {% include "@atoms/01-links/link/link.twig" with {
-      link_base_class: 'phone',
+      link_base_class: 'phone-number',
       link_content: address_bar__phone_number,
       link_url: 'tel:' ~ address_bar__phone_number,
     } %}
