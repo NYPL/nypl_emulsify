@@ -17,11 +17,11 @@
 #}
 {% set responsive_image_base_class = responsive_image_base_class|default('image') %}
 
-{% if output_image_tag %}
-  {% include "@atoms/04-images/00-image/_image.twig" with {
-    image_base_class: responsive_image_base_class,
-    image_modifiers: responsive_image_modifiers,
-    image_blockname: responsive_image_blockname,
+{% if output_picture_tag %}
+  {% include "@atoms/04-images/00-image/_picture.twig" with {
+    picture_base_class: responsive_image_base_class,
+    picture_modifiers: responsive_image_modifiers,
+    picture_blockname: responsive_image_blockname,
     img_srcset: img_srcset|default(img_element['#attributes'].srcset),
     img_sizes: img_sizes|default(img_element['#attributes'].sizes),
     img_src: img_src|default(img_element['#uri']),
@@ -29,10 +29,10 @@
     img_title: img_title|default(img_element['#title']),
   } %}
 {% else %}
-  {% include "@atoms/04-images/00-image/_picture.twig" with {
-    picture_base_class: responsive_image_base_class,
-    picture_modifiers: responsive_image_modifiers,
-    picture_blockname: responsive_image_blockname,
+  {% include "@atoms/04-images/00-image/_image.twig" with {
+    image_base_class: responsive_image_base_class,
+    image_modifiers: responsive_image_modifiers,
+    image_blockname: responsive_image_blockname,
     img_srcset: img_srcset|default(img_element['#attributes'].srcset),
     img_sizes: img_sizes|default(img_element['#attributes'].sizes),
     img_src: img_src|default(img_element['#uri']),

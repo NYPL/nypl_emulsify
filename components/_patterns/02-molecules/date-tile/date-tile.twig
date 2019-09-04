@@ -21,7 +21,7 @@
     {% else %}
       {% include "@molecules/date-tile/_date-tile--date.twig" with {
         date_tile__month: date_tile__start_date|date('M'),
-        date_tile__day: date_tile__start_date|date('n'),
+        date_tile__day: date_tile__start_date|date('j'),
       } %}
     {% endif %}
   </div>
@@ -30,7 +30,7 @@
     <div {{ bem('date', [], date_tile__base_class) }}>
       {% include "@molecules/date-tile/_date-tile--date.twig" with {
         date_tile__month: date_tile__end_date|date('M'),
-        date_tile__day: date_tile__end_date|date('n'),
+        date_tile__day: date_tile__end_date|date('j'),
       } %}
     </div>
   {% endif %}
