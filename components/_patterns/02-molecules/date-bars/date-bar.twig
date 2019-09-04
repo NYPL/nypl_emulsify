@@ -2,7 +2,11 @@
 /**
  * @file
  * Event address bar for displaying date and time information for events.
- *
+ * 
+ * Variables:
+ * # event_date_start — The start date/time.
+ * # event_date_end — The end date/time.
+ * # event_time_range — String with the time range.
  */
 #}
 
@@ -15,6 +19,14 @@
 <div {{ bem(date_bar_base_class , (date_bar_modifiers), date_bar_blockname) }}>
   {% if date(event_date_end) < date() %}
     The event has ended
+  {% elseif event_date_end|date('Y-m-d') > event_date_start|date('Y-m-d') %}
+    Open now through
+    {% include "@atoms/02-text/00-headings/_heading.twig" with {
+      heading_level: '2',
+      heading: event_date_end|date("l, F d"),
+      heading_base_class: 'date',
+      heading_blockname: date_bar_base_class,
+    } %}
   {% else %}
     {% include "@atoms/02-text/00-headings/_heading.twig" with {
       heading_level: '2',

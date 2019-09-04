@@ -12,6 +12,7 @@
 
   &__date {
     @include heading-small($color: $white);
+
     flex: 0 0 100%;
     margin: 0;
   }
