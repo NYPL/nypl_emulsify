@@ -1,12 +1,5 @@
 .event-card {
   &__image {
-    position: relative;
-
-    .date-tile {
-      position: absolute;
-      top: $space-m;
-      left: $space-m;
-      background-color: $white;
-    }
+    position: relative; // This supports positioning the date-tile
   }
 }

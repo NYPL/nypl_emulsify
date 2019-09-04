@@ -12,13 +12,18 @@
         } %}
       {% endblock %}
       {% include "@molecules/date-tile/date-tile.twig" with {
+        date_tile__modifiers: ['floated'],
         ongoing: event_card__date__ongoing,
         date_tile__start_date: event_card__date__start,
         date_tile__end_date: event_card__date__end,
       } %}
     </div>
   {% endif %}
-  {{ event_card__heading }}
+  {% include "@atoms/02-text/00-headings/_heading.twig" with {
+    heading_level: '3',
+    heading_blockname: event_card__base_class,
+    heading: event_card__heading,
+  } %}
   {{ event_card__date__start }}
   {{ event_card__date__end }}
   {{ event_card__library_name }}

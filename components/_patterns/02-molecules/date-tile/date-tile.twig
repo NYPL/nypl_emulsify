@@ -7,7 +7,7 @@
 
 {% set date_tile__base_class = 'date-tile' %}
 
-<div {{ bem(date_tile__base_class) }} aria-hidden="true">
+<div {{ bem(date_tile__base_class, date_tile__modifiers) }} aria-hidden="true">
   <div {{ bem('date', [], date_tile__base_class) }}>
     {% if ongoing == true %}
       {% include "@molecules/date-tile/_date-tile--date.twig" with {
