@@ -1,0 +1,11 @@
+{% set event_card__base_class = 'event-card' %}
+<div {{ bem(event_card__base_class) }}>
+  {{ event_card__image }}
+  {{ event_card__heading }}
+  {{ event_card__date__start }}
+  {{ event_card__date__end }}
+  {{ event_card__library_name }}
+  {% for tag in event_card__tags %}
+    {{ tag }}
+  {% endfor %}
+</div>
