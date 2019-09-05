@@ -1,12 +1,12 @@
 .date-bar {
-  align-items: center;
+  align-items: flex-start;
   background-color: $color-success;
   color: $white;
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: column nowrap;
   font-size: 1em;
   font-weight: 600;
-  list-style-type: none;
+  justify-content: space-around;
   min-height: 80px;
   padding: $space-s $space;
 
