@@ -2,13 +2,21 @@
 /**
  * @file
  * Event address bar for displaying date and time information for events.
- * 
+ *
  * Variables:
  * # event_date_start — The start date/time.
  * # event_date_end — The end date/time.
- * # event_time_range — String with the time range.
+ *
+ * # Dates should be provided in a machine readable format, like 2019-11-15 12:00:00
  */
 #}
+
+{# Date/time formats used in this component #}
+{% set time__ymd = 'Y-m-d' %} {# 2019-11-15 #}
+{% set time__day = 'l, F d' %} {# Friday, November 15 #}
+{% set time__time = 'g:iA' %} {# 2:00PM #}
+
+{% set now = 'now'|date(time__ymd) %}
 
 {% set date_bar_base_class = 'date-bar' %}
 
@@ -16,32 +24,57 @@
   {% set date_bar_modifiers = ['ended'] %}
 {% endif %}
 
-<div {{ bem(date_bar_base_class , (date_bar_modifiers), date_bar_blockname) }}>
+<div {{ bem(date_bar_base_class , date_bar_modifiers) }}>
+  {# Ended #}
   {% if date(event_date_end) < date() %}
     The event has ended
-  {% elseif event_date_end|date('Y-m-d') > event_date_start|date('Y-m-d') %}
+
+  {# Range Open Now #}
+  {% elseif (event_date_start|date(time__ymd) < now) and (event_date_end|date(time__ymd) > now) %}
     Open now through
-    {% include "@atoms/02-text/00-headings/_heading.twig" with {
-      heading_level: '2',
-      heading: event_date_end|date("l, F d"),
-      heading_base_class: 'date',
-      heading_blockname: date_bar_base_class,
+    {% include "@atoms/time/_time.twig" with {
+      time: event_date_end,
+      time__human: time__day,
     } %}
+
+  {# Range Not Yet Open #}
+  {% elseif (event_date_start|date(time__ymd) > now) and (event_date_end|date(time__ymd) > event_date_start|date(time__ymd)) %}
+    <div>
+      Open:
+      {% include "@atoms/time/_time.twig" with {
+        time: event_date_start,
+        time__human: time__day,
+      } %}
+    </div>
+    <div>
+      Until:
+      {% include "@atoms/time/_time.twig" with {
+        time: event_date_end,
+        time__human: time__day,
+      } %}
+    </div>
+
+  {# Single Day #}
   {% else %}
-    {% include "@atoms/02-text/00-headings/_heading.twig" with {
-      heading_level: '2',
-      heading: event_date_start|date("l, F d"),
-      heading_base_class: 'date',
-      heading_blockname: date_bar_base_class,
+    {# Day #}
+    {% include "@atoms/time/_time.twig" with {
+      time: event_date_end,
+      time__human: time__day,
     } %}
 
-    {% set event_time_range = "#{ event_date_start|date("g:iA") }–#{ event_date_end|date("g:iA")}" %}
-
-    {% include "@atoms/02-text/00-headings/_heading.twig" with {
-      heading_level: '2',
-      heading: event_time_range,
-      heading_base_class: 'date',
-      heading_blockname: date_bar_base_class,
-    } %}
+    {# Time #}
+    <div>
+      {% include "@atoms/time/_time.twig" with {
+        time: event_date_start,
+        time__human: time__time,
+      } %}
+      {% if event_date_end|date(time__time) > event_date_start|date(time__time) %}
+        –
+        {% include "@atoms/time/_time.twig" with {
+          time: event_date_end,
+          time__human: time__time,
+        } %}
+      {% endif %}
+    </div>
   {% endif %}
 </div>
