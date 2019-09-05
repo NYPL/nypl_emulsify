@@ -1,21 +1,12 @@
 .date-bar {
-  align-items: flex-start;
   background-color: $color-success;
   color: $white;
   display: flex;
   flex-flow: column nowrap;
-  font-size: 1em;
   font-weight: 600;
   justify-content: space-around;
   min-height: 80px;
   padding: $space-s $space;
-
-  &__date {
-    @include heading-small($color: $white);
-
-    flex: 0 0 100%;
-    margin: 0;
-  }
 
   &--ended {
     background-color: $color-error;
