@@ -40,7 +40,7 @@
 <div {{ bem(address_bar__base_class) }}>
   {# Date Bar #}
   {% if address_bar__date_start %}
-    {% include "@molecules/date-bars/date-bar.twig" with {
+    {% include "@molecules/address-bar/partials/date-bar/date-bar.twig" with {
       event_date_start: address_bar__date_start,
       event_date_end: address_bar__date_end,
     } %}

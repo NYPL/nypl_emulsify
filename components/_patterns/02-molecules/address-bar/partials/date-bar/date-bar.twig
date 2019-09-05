@@ -40,7 +40,7 @@
   {# Range Not Yet Open #}
   {% elseif (event_date_start|date(time__ymd) > now) and (event_date_end|date(time__ymd) > event_date_start|date(time__ymd)) %}
     <div>
-      Open:
+      Opens:
       {% include "@atoms/time/_time.twig" with {
         time: event_date_start,
         time__human: time__day,
