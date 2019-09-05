@@ -1,19 +1,12 @@
-.date-bar,
-.address-bar__date-bar {
-  align-items: center;
+.date-bar {
   background-color: $color-success;
   color: $white;
   display: flex;
-  flex-wrap: wrap;
-  font-size: 1em;
+  flex-flow: column nowrap;
   font-weight: 600;
-  list-style-type: none;
+  justify-content: space-around;
   min-height: 80px;
   padding: $space-s $space;
-
-  span {
-    flex: 0 0 100%;
-  }
 
   &--ended {
     background-color: $color-error;
