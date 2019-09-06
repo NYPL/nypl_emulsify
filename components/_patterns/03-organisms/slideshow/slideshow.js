@@ -13,10 +13,12 @@ $(document).ready(function(){
     currentCarousel.not('.slick-initialized').slick({
       slidesToShow: 3,
       slidesToScroll: 1,
-      infinite: false,
+      infinite: true,
       accessibility: true,
       mobileFirst: true,
       asNavFor: '.slideshow__viewer',
+      prevArrow: $('.slideshow__nav--prev', this),
+      nextArrow: $('.slideshow__nav--next', this),
       centerMode: true,
       focusOnSelect: true
     });

@@ -3,6 +3,7 @@
 {% set slideshow__base_class = 'slideshow' %}
 
 <div {{ bem(slideshow__base_class) }}>
+  {# Viewer #}
   <div {{ bem('viewer', [], slideshow__base_class) }}>
     {% include "@atoms/04-images/00-image/responsive-image.twig" with {
       output_image_tag: true,
@@ -33,37 +34,63 @@
       img_src: 'https://placeimg.com/640/480/arch/sepia',
     } %}
   </div>
+
+  {# Image Title #}
   <div {{ bem('image-title', [], slideshow__base_class) }}>
     Image title goes here
   </div>
-  <div {{ bem('carousel', [], slideshow__base_class) }}>
-    {% include "@atoms/04-images/00-image/responsive-image.twig" with {
-      output_image_tag: true,
-      img_src: 'https://placeimg.com/640/480/tech',
-    } %}
-    {% include "@atoms/04-images/00-image/responsive-image.twig" with {
-      output_image_tag: true,
-      img_src: 'https://placeimg.com/640/480/nature',
-    } %}
-    {% include "@atoms/04-images/00-image/responsive-image.twig" with {
-      output_image_tag: true,
-      img_src: 'https://placeimg.com/640/480/people',
-    } %}
-    {% include "@atoms/04-images/00-image/responsive-image.twig" with {
-      output_image_tag: true,
-      img_src: 'https://placeimg.com/640/480/animals',
-    } %}
-    {% include "@atoms/04-images/00-image/responsive-image.twig" with {
-      output_image_tag: true,
-      img_src: 'https://placeimg.com/640/480/arch',
-    } %}
-    {% include "@atoms/04-images/00-image/responsive-image.twig" with {
-      output_image_tag: true,
-      img_src: 'https://placeimg.com/640/480/nature/grayscale',
-    } %}
-    {% include "@atoms/04-images/00-image/responsive-image.twig" with {
-      output_image_tag: true,
-      img_src: 'https://placeimg.com/640/480/arch/sepia',
-    } %}
+
+  {# Navigation #}
+  <div {{ bem('navigation', [], slideshow__base_class) }}>
+    {# Previous Arrow #}
+    <div {{ bem('nav', (['prev']), slideshow__base_class) }}>
+      {# {% include "@atoms/04-images/icons/_icon.twig" with {
+        icon_name: 'arrow-white',
+        icon_base_class: 'arrow',
+        icon_blockname: slideshow__base_class
+      } %} #}
+    </div>
+
+    {# Next Arrow #}
+    <div {{ bem('nav', (['next']), slideshow__base_class) }}>
+      {# {% include "@atoms/04-images/icons/_icon.twig" with {
+        icon_name: 'arrow-white',
+        icon_base_class: 'arrow',
+        icon_blockname: slideshow__base_class,
+        icon_modifiers: ['right']
+      } %} #}
+    </div>
+
+    {# Carousel #}
+    <div {{ bem('carousel', [], slideshow__base_class) }}>
+      {% include "@atoms/04-images/00-image/responsive-image.twig" with {
+        output_image_tag: true,
+        img_src: 'https://placeimg.com/640/480/tech',
+      } %}
+      {% include "@atoms/04-images/00-image/responsive-image.twig" with {
+        output_image_tag: true,
+        img_src: 'https://placeimg.com/640/480/nature',
+      } %}
+      {% include "@atoms/04-images/00-image/responsive-image.twig" with {
+        output_image_tag: true,
+        img_src: 'https://placeimg.com/640/480/people',
+      } %}
+      {% include "@atoms/04-images/00-image/responsive-image.twig" with {
+        output_image_tag: true,
+        img_src: 'https://placeimg.com/640/480/animals',
+      } %}
+      {% include "@atoms/04-images/00-image/responsive-image.twig" with {
+        output_image_tag: true,
+        img_src: 'https://placeimg.com/640/480/arch',
+      } %}
+      {% include "@atoms/04-images/00-image/responsive-image.twig" with {
+        output_image_tag: true,
+        img_src: 'https://placeimg.com/640/480/nature/grayscale',
+      } %}
+      {% include "@atoms/04-images/00-image/responsive-image.twig" with {
+        output_image_tag: true,
+        img_src: 'https://placeimg.com/640/480/arch/sepia',
+      } %}
+    </div>
   </div>
 </div>

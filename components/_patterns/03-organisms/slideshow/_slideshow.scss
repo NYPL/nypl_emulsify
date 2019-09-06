@@ -1,14 +1,46 @@
-// .slick-slide:not(.slick-active) {
-//   opacity: 0.2;
-//   pointer-events: none;
-// }
+.slideshow {
+  &__navigation {
+    position: relative;
+  }
 
-// .slick-list {
-//   @include wrapper;
+  &__nav {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    border: 1px solid $gray-medium;
+    background: $gray-xlight;
 
-//   overflow: visible;
-// }
+    &::after {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      content: '';
+      border: 2px solid $black;
+      border-bottom: 0;
+      border-left: 0;
+      height: 8px;
+      width: 8px;
+    }
 
-// .slick-disabled {
-//   visibility: hidden;
-// }
+    &--prev {
+      left: 0;
+
+      &::after {
+        transform: translate(-40%, -50%) rotate(-135deg);
+      }
+    }
+
+    &--next {
+      right: 0;
+
+      &::after {
+        transform: translate(-60%, -50%) rotate(45deg);
+      }
+    }
+  }
+}
