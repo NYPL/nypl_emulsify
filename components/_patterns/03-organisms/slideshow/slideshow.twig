@@ -13,10 +13,18 @@
     {% endfor %}
   </div>
 
-  {# Image Title #}
-  <div {{ bem('image-title', [], slideshow__base_class) }}>
+  <div {{ bem('meta', [], slideshow__base_class) }}>
     {% for slide in slides %}
-      <div>{{ slide.img_title }}</div>
+      <div {{ bem('meta-item', [], slideshow__base_class) }}>
+        {# Image Title #}
+        <span {{ bem('image-title', [], slideshow__base_class) }}>
+          {{ slide.img_title }}
+        </span>
+        {# Counter #}
+        <span {{ bem('counter', [], slideshow__base_class) }}>
+          {{ loop.index }} of {{ loop.length }} Slides
+        </span>
+      </div>
     {% endfor %}
   </div>
 

@@ -1,19 +1,22 @@
 $(document).ready(function(){
   $('.slideshow').each(function() {
-    var currentViewer = $('.slideshow__viewer', this)
-    var currentTitle = $('.slideshow__image-title', this)
-    var currentCarousel = $('.slideshow__carousel', this)
+    const currentViewer = $('.slideshow__viewer', this);
+    const currentMeta = $('.slideshow__meta', this);
+    const currentCarousel = $('.slideshow__carousel', this);
     // The Viewer at the top
     currentViewer.not('.slick-initialized').slick({
       slidesToShow: 1,
       slidesToScroll: 1,
       arrows: false,
-      asNavFor: '.slideshow__carousel, .slideshow__image-title'
+      infinite: true,
+      asNavFor: '.slideshow__carousel, .slideshow__meta',
     });
-    currentTitle.not('.slick-initialized').slick({
+    // The meta information (Title + counter)
+    currentMeta.not('.slick-initialized').slick({
       slidesToShow: 1,
       slidesToScroll: 1,
-      arrows: false
+      arrows: false,
+      infinite: true,
     });
     // The Carousel at the bottom
     currentCarousel.not('.slick-initialized').slick({
@@ -22,11 +25,12 @@ $(document).ready(function(){
       infinite: true,
       accessibility: true,
       mobileFirst: true,
-      asNavFor: '.slideshow__viewer, .slideshow__image-title',
+      asNavFor: '.slideshow__viewer, .slideshow__meta',
       prevArrow: $('.slideshow__nav--prev', this),
       nextArrow: $('.slideshow__nav--next', this),
       centerMode: true,
-      focusOnSelect: true
+      centerPadding: '60px',
+      focusOnSelect: true,
     });
   });
 });

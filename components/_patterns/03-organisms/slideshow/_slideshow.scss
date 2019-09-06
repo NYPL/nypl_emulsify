@@ -1,46 +1,61 @@
-.slideshow {
-  &__navigation {
-    position: relative;
-  }
+// The image meta section (Image title + item count)
+.slideshow__meta-item {
+  display: flex !important;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
 
-  &__nav {
-    z-index: 1;
+// The entire navigation section (carousel + arrows)
+.slideshow__navigation {
+  position: relative;
+  padding: 50px 0;
+}
+
+// The carousel arrows
+.slideshow__nav {
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  border: 1px solid $gray-medium;
+  background: $gray-xlight;
+
+  &::after {
+    display: block;
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
-    height: 24px;
-    width: 24px;
-    border-radius: 50%;
-    border: 1px solid $gray-medium;
-    background: $gray-xlight;
+    left: 50%;
+    content: '';
+    border: 2px solid $black;
+    border-bottom: 0;
+    border-left: 0;
+    height: 8px;
+    width: 8px;
+  }
+
+  &--prev {
+    left: 0;
 
     &::after {
-      display: block;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      content: '';
-      border: 2px solid $black;
-      border-bottom: 0;
-      border-left: 0;
-      height: 8px;
-      width: 8px;
+      transform: translate(-40%, -50%) rotate(-135deg);
     }
+  }
 
-    &--prev {
-      left: 0;
+  &--next {
+    right: 0;
 
-      &::after {
-        transform: translate(-40%, -50%) rotate(-135deg);
-      }
+    &::after {
+      transform: translate(-60%, -50%) rotate(45deg);
     }
+  }
+}
 
-    &--next {
-      right: 0;
-
-      &::after {
-        transform: translate(-60%, -50%) rotate(45deg);
-      }
-    }
+// The carousel
+.slideshow__carousel {
+  .slick-slide {
+    margin: 0 $space-xs;
   }
 }
