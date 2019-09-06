@@ -5,45 +5,19 @@
 <div {{ bem(slideshow__base_class) }}>
   {# Viewer #}
   <div {{ bem('viewer', [], slideshow__base_class) }}>
-    {% include "@atoms/04-images/00-image/responsive-image.twig" with {
-      output_image_tag: true,
-      img_src: 'https://placeimg.com/640/480/tech',
-    } %}
-    {% include "@atoms/04-images/00-image/responsive-image.twig" with {
-      output_image_tag: true,
-      img_src: 'https://placeimg.com/640/480/nature',
-    } %}
-    {% include "@atoms/04-images/00-image/responsive-image.twig" with {
-      output_image_tag: true,
-      img_src: 'https://placeimg.com/640/480/people',
-    } %}
-    {% include "@atoms/04-images/00-image/responsive-image.twig" with {
-      output_image_tag: true,
-      img_src: 'https://placeimg.com/640/480/animals',
-    } %}
-    {% include "@atoms/04-images/00-image/responsive-image.twig" with {
-      output_image_tag: true,
-      img_src: 'https://placeimg.com/640/480/arch',
-    } %}
-    {% include "@atoms/04-images/00-image/responsive-image.twig" with {
-      output_image_tag: true,
-      img_src: 'https://placeimg.com/640/480/nature/grayscale',
-    } %}
-    {% include "@atoms/04-images/00-image/responsive-image.twig" with {
-      output_image_tag: true,
-      img_src: 'https://placeimg.com/640/480/arch/sepia',
-    } %}
+    {% for slide in slides %}
+      {% include "@atoms/04-images/00-image/responsive-image.twig" with {
+        output_image_tag: true,
+        img_src: slide.img_src,
+      } %}
+    {% endfor %}
   </div>
 
   {# Image Title #}
   <div {{ bem('image-title', [], slideshow__base_class) }}>
-    <div>Image 1 title goes here</div>
-    <div>Image 2 title goes here</div>
-    <div>Image 3 title goes here</div>
-    <div>Image 4 title goes here</div>
-    <div>Image 5 title goes here</div>
-    <div>Image 6 title goes here</div>
-    <div>Image 7 title goes here</div>
+    {% for slide in slides %}
+      <div>{{ slide.img_title }}</div>
+    {% endfor %}
   </div>
 
   {# Navigation #}
@@ -69,34 +43,12 @@
 
     {# Carousel #}
     <div {{ bem('carousel', [], slideshow__base_class) }}>
-      {% include "@atoms/04-images/00-image/responsive-image.twig" with {
-        output_image_tag: true,
-        img_src: 'https://placeimg.com/640/480/tech',
-      } %}
-      {% include "@atoms/04-images/00-image/responsive-image.twig" with {
-        output_image_tag: true,
-        img_src: 'https://placeimg.com/640/480/nature',
-      } %}
-      {% include "@atoms/04-images/00-image/responsive-image.twig" with {
-        output_image_tag: true,
-        img_src: 'https://placeimg.com/640/480/people',
-      } %}
-      {% include "@atoms/04-images/00-image/responsive-image.twig" with {
-        output_image_tag: true,
-        img_src: 'https://placeimg.com/640/480/animals',
-      } %}
-      {% include "@atoms/04-images/00-image/responsive-image.twig" with {
-        output_image_tag: true,
-        img_src: 'https://placeimg.com/640/480/arch',
-      } %}
-      {% include "@atoms/04-images/00-image/responsive-image.twig" with {
-        output_image_tag: true,
-        img_src: 'https://placeimg.com/640/480/nature/grayscale',
-      } %}
-      {% include "@atoms/04-images/00-image/responsive-image.twig" with {
-        output_image_tag: true,
-        img_src: 'https://placeimg.com/640/480/arch/sepia',
-      } %}
+      {% for slide in slides %}
+        {% include "@atoms/04-images/00-image/responsive-image.twig" with {
+          output_image_tag: true,
+          img_src: slide.img_src,
+        } %}
+      {% endfor %}
     </div>
   </div>
 </div>
