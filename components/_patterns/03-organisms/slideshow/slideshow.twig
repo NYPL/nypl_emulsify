@@ -6,10 +6,12 @@
   {# Viewer #}
   <div {{ bem('viewer', [], slideshow__base_class) }}>
     {% for slide in slides %}
-      {% include "@atoms/04-images/00-image/responsive-image.twig" with {
-        output_image_tag: true,
-        img_src: slide.img_src,
-      } %}
+      <div>
+        {% include "@atoms/04-images/00-image/responsive-image.twig" with {
+          output_image_tag: true,
+          img_src: slide.img_src,
+        } %}
+      </div>
     {% endfor %}
   </div>
 

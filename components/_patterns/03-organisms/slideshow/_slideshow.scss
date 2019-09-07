@@ -1,3 +1,15 @@
+// The viewer
+.slideshow__viewer {
+  // Center the images vertically and horizontally
+  // to accommodate various aspect ratios.
+  .slick-track,
+  .slick-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
 // The image meta section (Image title + item count)
 .slideshow__meta-item {
   display: flex !important;
