@@ -1,5 +1,7 @@
 // The viewer
 .slideshow__viewer {
+  background-color: $gray-light;
+
   // Center the images vertically and horizontally
   // to accommodate various aspect ratios.
   .slick-track,

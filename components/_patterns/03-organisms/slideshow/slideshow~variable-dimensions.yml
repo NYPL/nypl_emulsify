@@ -1,15 +1,15 @@
 slides:
-  - img_src: https://placeimg.com/320/480/tech
+  - img_src: https://placeimg.com/320/520/tech
     img_title: Image 1 title goes here
-  - img_src: https://placeimg.com/1600/900/nature
+  - img_src: https://placeimg.com/925/520/nature
     img_title: Image 2 title goes here
-  - img_src: https://placeimg.com/640/480/people
+  - img_src: https://placeimg.com/693/520/people
     img_title: Image 3 title goes here
-  - img_src: https://placeimg.com/600/400/animals
+  - img_src: https://placeimg.com/779/520/animals
     img_title: Image 4 title goes here
-  - img_src: https://placeimg.com/500/300/arch
+  - img_src: https://placeimg.com/867/520/arch
     img_title: Image 5 title goes here
-  - img_src: https://placeimg.com/200/480/nature/grayscale
+  - img_src: https://placeimg.com/217/520/nature/grayscale
     img_title: Image 6 title goes here
-  - img_src: https://placeimg.com/640/200/arch/sepia
+  - img_src: https://placeimg.com/1224/382/arch/sepia
     img_title: Image 7 title goes here
