@@ -73,3 +73,16 @@
     margin: 0 $space-xs;
   }
 }
+
+// Styles only for Pattern Lab.
+// These will never be used on the site.
+.pl {
+  .slideshow__navigation {
+    // This is to kind of "fake" the carousel image sizes since we don't have anything
+    // like Drupal doing image manipulation (scaling and cropping) for us.
+    // It's still not perfect, but gets the images closer to the aspect ratio that
+    // they will be on the site.
+    max-height: 320px;
+    overflow: hidden;
+  }
+}
