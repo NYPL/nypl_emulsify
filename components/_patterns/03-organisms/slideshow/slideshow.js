@@ -20,7 +20,7 @@ $(document).ready(function(){
     });
     // The Carousel at the bottom
     currentCarousel.not('.slick-initialized').slick({
-      slidesToShow: 3,
+      slidesToShow: 5,
       slidesToScroll: 1,
       infinite: true,
       accessibility: true,
