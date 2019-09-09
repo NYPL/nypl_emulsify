@@ -44,21 +44,22 @@
   <div {{ bem('navigation', [], slideshow__base_class) }}>
     {# Previous Arrow #}
     <div {{ bem('nav', (['prev']), slideshow__base_class) }}>
-      {# {% include "@atoms/04-images/icons/_icon.twig" with {
-        icon_name: 'arrow-white',
-        icon_base_class: 'arrow',
+      {% include "@atoms/04-images/icons/_icon.twig" with {
+        icon_name: 'left-arrow',
+        icon_base_class: 'nav-icon',
+        icon_modifiers: ['prev'],
         icon_blockname: slideshow__base_class
-      } %} #}
+      } %}
     </div>
 
     {# Next Arrow #}
     <div {{ bem('nav', (['next']), slideshow__base_class) }}>
-      {# {% include "@atoms/04-images/icons/_icon.twig" with {
-        icon_name: 'arrow-white',
-        icon_base_class: 'arrow',
-        icon_blockname: slideshow__base_class,
-        icon_modifiers: ['right']
-      } %} #}
+      {% include "@atoms/04-images/icons/_icon.twig" with {
+        icon_name: 'left-arrow',
+        icon_base_class: 'nav-icon',
+        icon_modifiers: ['next'],
+        icon_blockname: slideshow__base_class
+      } %}
     </div>
 
     {# Carousel #}

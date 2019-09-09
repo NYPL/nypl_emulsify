@@ -14,13 +14,14 @@
 
 // The image meta section (Image title + item count)
 .slideshow__meta {
-  padding: 1rem 0;
+  padding: $space-s 0;
 }
 
 .slick-initialized .slideshow__meta-item {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
+  align-items: flex-end;
 }
 
 .slideshow__image-info {
@@ -34,12 +35,12 @@
 
 .slideshow__image-collection-link {
   color: $nypl-blue-regular;
-  letter-spacing: 0.444444px;
+  letter-spacing: 0.0275em;
 }
 
 .slideshow__counter {
   font-size: 0.75rem;
-  letter-spacing: 0.44px;
+  letter-spacing: 0.0275em;
 }
 
 // The entire navigation section (carousel + arrows)
@@ -55,37 +56,33 @@
   transform: translateY(-50%);
   height: 24px;
   width: 24px;
+  display: flex;
+  align-items: center;
   border-radius: 50%;
   border: 1px solid $gray-medium;
   background: $gray-xlight;
 
-  &::after {
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    content: '';
-    border: 2px solid $black;
-    border-bottom: 0;
-    border-left: 0;
-    height: 8px;
-    width: 8px;
-  }
-
   &--prev {
     left: 0;
-
-    &::after {
-      transform: translate(-40%, -50%) rotate(-135deg);
-    }
   }
 
   &--next {
     right: 0;
+  }
+}
 
-    &::after {
-      transform: translate(-60%, -50%) rotate(45deg);
-    }
+.slideshow__nav-icon {
+  position: relative;
+  height: 15px;
+  width: 15px;
+
+  &--prev {
+    left: 0.15rem;
+  }
+
+  &--next {
+    left: 0.3rem;
+    transform: rotate(180deg);
   }
 }
 
@@ -93,7 +90,7 @@
 .slideshow__carousel {
   border-top: 1px solid $gray-light;
   border-bottom: 1px solid $gray-light;
-  padding: 2rem 0;
+  padding: $space-l 0;
 }
 
 .slideshow__carousel-item {
