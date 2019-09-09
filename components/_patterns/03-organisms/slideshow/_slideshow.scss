@@ -63,11 +63,11 @@
   background: $gray-xlight;
 
   &--prev {
-    left: 0;
+    left: -0.75rem;
   }
 
   &--next {
-    right: 0;
+    right: -0.75rem;
   }
 }
 
@@ -101,11 +101,13 @@
 // These will never be used on the site.
 .pl {
   .slideshow__navigation {
-    // This is to kind of "fake" the carousel image sizes since we don't have anything
-    // like Drupal doing image manipulation (scaling and cropping) for us.
-    // It's still not perfect, but gets the images closer to the aspect ratio that
-    // they will be on the site.
-    max-height: 220px;
-    overflow: hidden;
+    .slick-track {
+      // This is to kind of "fake" the carousel image sizes since we don't have anything
+      // like Drupal doing image manipulation (scaling and cropping) for us.
+      // It's still not perfect, but gets the images closer to the aspect ratio that
+      // they will be on the site.
+      max-height: 157px;
+      overflow: hidden;
+    }
   }
 }
