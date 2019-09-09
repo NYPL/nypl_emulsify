@@ -13,16 +13,38 @@
 }
 
 // The image meta section (Image title + item count)
+.slideshow__meta {
+  padding: 1rem 0;
+}
+
 .slideshow__meta-item {
   display: flex !important;
   flex-flow: row nowrap;
   justify-content: space-between;
 }
 
+.slideshow__image-info {
+  margin-right: 1rem;
+}
+
+.slideshow__image-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.slideshow__image-collection-link {
+  color: $nypl-blue-regular;
+  letter-spacing: 0.444444px;
+}
+
+.slideshow__counter {
+  font-size: 0.75rem;
+  letter-spacing: 0.44px;
+}
+
 // The entire navigation section (carousel + arrows)
 .slideshow__navigation {
   position: relative;
-  padding: 50px 0;
 }
 
 // The carousel arrows
@@ -86,7 +108,7 @@
     // like Drupal doing image manipulation (scaling and cropping) for us.
     // It's still not perfect, but gets the images closer to the aspect ratio that
     // they will be on the site.
-    max-height: 320px;
+    max-height: 220px;
     overflow: hidden;
   }
 }

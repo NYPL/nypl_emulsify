@@ -2,7 +2,7 @@
 
 {% set slideshow__base_class = 'slideshow' %}
 
-<div {{ bem(slideshow__base_class) }}>
+<section {{ bem(slideshow__base_class) }}>
   {# Viewer #}
   <div {{ bem('viewer', [], slideshow__base_class) }}>
     {% for slide in slides %}
@@ -19,13 +19,23 @@
     {% for slide in slides %}
       <div {{ bem('meta-item', [], slideshow__base_class) }}>
         {# Image Title #}
-        <span {{ bem('image-title', [], slideshow__base_class) }}>
-          {{ slide.img_title }}
-        </span>
+        <div {{ bem('image-info', [], slideshow__base_class) }}>
+          <span {{ bem('image-title', [], slideshow__base_class) }}>
+            {{ slide.img_title }}
+          </span>
+          {% if slide.image_collection_link %}
+            {% include "@atoms/01-links/link/link.twig" with {
+              link_base_class: 'image-collection-link',
+              link_blockname: slideshow__base_class,
+              link_url: slide.image_collection_link,
+              link_content: 'See More in Digital Collections',
+            } %}
+          {% endif %}
+        </div>
         {# Counter #}
-        <span {{ bem('counter', [], slideshow__base_class) }}>
+        <div {{ bem('counter', [], slideshow__base_class) }}>
           {{ loop.index }} of {{ loop.length }} Slides
-        </span>
+        </div>
       </div>
     {% endfor %}
   </div>
@@ -61,4 +71,4 @@
       {% endfor %}
     </div>
   </div>
-</div>
+</section>
