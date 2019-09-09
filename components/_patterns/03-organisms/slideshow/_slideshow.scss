@@ -17,8 +17,8 @@
   padding: 1rem 0;
 }
 
-.slideshow__meta-item {
-  display: flex !important;
+.slick-initialized .slideshow__meta-item {
+  display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
 }
@@ -94,10 +94,10 @@
   border-top: 1px solid $gray-light;
   border-bottom: 1px solid $gray-light;
   padding: 2rem 0;
+}
 
-  .slick-slide {
-    margin: 0 $space-xs;
-  }
+.slideshow__carousel-item {
+  margin: 0 $space-xs;
 }
 
 // Styles only for Pattern Lab.
