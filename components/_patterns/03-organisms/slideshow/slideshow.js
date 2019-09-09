@@ -29,7 +29,6 @@ $(document).ready(function(){
       prevArrow: $('.slideshow__nav--prev', this),
       nextArrow: $('.slideshow__nav--next', this),
       centerMode: true,
-      centerPadding: '60px',
       focusOnSelect: true,
     });
   });
