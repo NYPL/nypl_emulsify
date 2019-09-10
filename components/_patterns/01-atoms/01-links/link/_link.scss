@@ -13,25 +13,25 @@ $color-link--hover: $nypl-blue-dark;
 @mixin link--more {
   display: inline-block;
   position: relative;
-  padding-right: 1rem;
+  padding-right: 1em;
   color: $color-link;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 0.875em;
   line-height: 1.21;
-  letter-spacing: 1.5px;
+  letter-spacing: 0.107142857em;
 
   &::after {
     display: block;
     position: absolute;
     top: 50%;
     transform: translateY(-50%) rotate(45deg);
-    right: 0.3rem;
+    right: 0.3em;
     content: '';
     border: 2px solid $color-link;
     border-bottom: 0;
     border-left: 0;
-    height: 8px;
-    width: 8px;
+    height: 0.5em;
+    width: 0.5em;
   }
 
   &:hover {
