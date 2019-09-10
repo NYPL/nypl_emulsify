@@ -2,7 +2,7 @@
   &__heading {
     @include address-bar-vertical-spacing;
 
-    font-size: 20px;
+    font-size: 1.25rem;
     line-height: 1.25;
     margin-top: 0;
   }
@@ -13,13 +13,13 @@
   }
 
   &__phone {
-    font-size: 14px;
-    letter-spacing: 1.5px;
+    font-size: 0.875rem;
+    letter-spacing: 0.107142857em;
   }
 
   &__phone-number {
-    font-size: 16px;
-    letter-spacing: 0.44px;
+    font-size: 1rem;
+    letter-spacing: 0.0275em;
     color: $nypl-blue-regular;
   }
 }
