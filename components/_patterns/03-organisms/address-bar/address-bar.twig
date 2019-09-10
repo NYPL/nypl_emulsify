@@ -40,7 +40,7 @@
 <div {{ bem(address_bar__base_class) }}>
   {# Date Bar #}
   {% if address_bar__date_start %}
-    {% include "@molecules/address-bar/partials/date-bar/_date-bar.twig" with {
+    {% include "@organisms/address-bar/partials/date-bar/_date-bar.twig" with {
       event_date_start: address_bar__date_start,
       event_date_end: address_bar__date_end,
     } %}
@@ -49,21 +49,21 @@
     <div {{ bem('details', [], address_bar__base_class) }}>
       {# Location information #}
       {% if address_bar__location %}
-        {% include "@molecules/address-bar/partials/_address-bar--location.twig" %}
+        {% include "@organisms/address-bar/partials/_address-bar--location.twig" %}
       {% endif %}
       {# Hours #}
       {% if days.0.day %}
-        {% include "@molecules/address-bar/partials/_address-bar--hours.twig" %}
+        {% include "@organisms/address-bar/partials/_address-bar--hours.twig" %}
       {% endif %}
       {# Accessibility level #}
       {% if address_bar__accessibility %}
-        {% include "@molecules/address-bar/partials/_address-bar--accessibility.twig" with {
+        {% include "@organisms/address-bar/partials/_address-bar--accessibility.twig" with {
           accessibility_level: address_bar__accessibility,
         } %}
       {% endif %}
       {# Amenities #}
       {% if location__amenities.0|length %}
-        {% include "@molecules/address-bar/partials/_address-bar--amenities.twig" %}
+        {% include "@organisms/address-bar/partials/_address-bar--amenities.twig" %}
       {% endif %}
     </div>
     {# CTAs #}
@@ -72,7 +72,7 @@
         {# Secondary ctas #}
         {% if address_bar__cta__secondary.0.address_bar__cta__secondary__url %}
           {% for link in address_bar__cta__secondary %}
-            {% include "@molecules/address-bar/partials/_address-bar--ctas.twig" with {
+            {% include "@organisms/address-bar/partials/_address-bar--ctas.twig" with {
               address_bar__link__text: link.address_bar__cta__secondary__text,
               address_bar__link__url: link.address_bar__cta__secondary__url,
             } %}
@@ -80,7 +80,7 @@
         {% endif %}
         {# Primary cta #}
         {% if address_bar__cta__primary__url or address_bar__cta__primary__alt_text %}
-          {% include "@molecules/address-bar/partials/_address-bar--ctas.twig" with {
+          {% include "@organisms/address-bar/partials/_address-bar--ctas.twig" with {
             address_bar__link_modifiers: ['primary'],
             address_bar__link__text: address_bar__cta__primary__text,
             address_bar__link__url: address_bar__cta__primary__url,
