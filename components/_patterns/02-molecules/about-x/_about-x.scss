@@ -1,4 +1,4 @@
-$about-x--break: $medium; // This is a random breakpoint. Design should verify it.
+$about-x--break: $medium;
 
 .about-x__content {
   display: flex;
@@ -10,11 +10,15 @@ $about-x--break: $medium; // This is a random breakpoint. Design should verify i
 }
 
 .about-x__image {
-  margin-bottom: 1rem;
+  margin-bottom: $space-s;
 
   @include breakpoint($about-x--break) {
     margin-bottom: 0;
-    margin-right: 2rem;
-    flex: 0 0 164px;
+    margin-right: $space-l;
+    flex: 0 1 164px;
   }
+}
+
+.about-x__text {
+  flex: 1 1 50%;
 }
