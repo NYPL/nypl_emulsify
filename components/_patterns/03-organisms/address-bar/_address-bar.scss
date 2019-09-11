@@ -9,14 +9,10 @@ $address-bar-border: 1px solid $gray-light;
     border-right: $address-bar-border;
     border-bottom: $address-bar-border;
     border-left: $address-bar-border;
-    padding: $space-xs;
+    padding: $space-s;
 
     > *:last-child {
       margin-bottom: 0;
     }
-  }
-
-  &__details {
-    padding: $space-xs;
   }
 }

@@ -18,4 +18,8 @@
       @include button--filled;
     }
   }
+
+  &__cta-alternate-text {
+    padding: $space-xs;
+  }
 }
