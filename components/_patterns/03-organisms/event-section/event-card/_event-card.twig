@@ -40,20 +40,23 @@
       } %}
     </div>
   {% endif %}
-  {% include "@atoms/02-text/00-headings/_heading.twig" with {
-    heading_level: '3',
-    heading_blockname: event_card__base_class,
-    heading: event_card__heading,
-  } %}
-  <div {{ bem('date', [], event_card__base_class) }}>
-    {{ start_date }} - {{ event_card__date__end|date(event_date) }}
-  </div>
-  <div {{ bem('library', [], event_card__base_class) }}>
-    {{ event_card__library_name }}
-  </div>
-  <div {{ bem('tags', [], event_card__base_class) }}>
-    {% for tag in event_card__tags %}
-      <span {{ bem('tag', [], event_card__base_class) }}>{{ tag }}</span>
-    {% endfor %}
+  <div {{ bem('content', [], event_card__base_class) }}>
+    {% include "@atoms/02-text/00-headings/_heading.twig" with {
+      heading_level: '3',
+      heading_base_class: 'heading',
+      heading_blockname: event_card__base_class,
+      heading: event_card__heading,
+    } %}
+    <div {{ bem('date', [], event_card__base_class) }}>
+      {{ start_date }} - {{ event_card__date__end|date(event_date) }}
+    </div>
+    <div {{ bem('library', [], event_card__base_class) }}>
+      {{ event_card__library_name }}
+    </div>
+    <div {{ bem('tags', [], event_card__base_class) }}>
+      {% for tag in event_card__tags %}
+        <span {{ bem('tag', [], event_card__base_class) }}>{{ tag }}</span>
+      {% endfor %}
+    </div>
   </div>
 </div>

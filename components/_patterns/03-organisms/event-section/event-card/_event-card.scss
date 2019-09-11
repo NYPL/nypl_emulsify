@@ -3,6 +3,14 @@
     position: relative; // This supports positioning the date-tile
   }
 
+  &__content {
+    padding: $space-s;
+  }
+
+  &__heading {
+    margin: 0 0 $space-s;
+  }
+
   &__date {
     margin-bottom: $space-xs;
     letter-spacing: 0.0275em;
