@@ -1,4 +1,4 @@
-@mixin img {
+@mixin image {
   display: block;
   height: auto;
   max-width: 100%;
@@ -6,7 +6,7 @@
 
 img,
 picture {
-  @include img;
+  @include image;
 }
 
 figure {
