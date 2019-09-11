@@ -2,4 +2,24 @@
   &__image {
     position: relative; // This supports positioning the date-tile
   }
+
+  &__date {
+    margin-bottom: $space-xs;
+    letter-spacing: 0.0275em;
+  }
+
+  &__library {
+    margin-bottom: $space-s;
+  }
+
+  &__tags {
+    @include link;
+
+    font-size: 13px;
+    letter-spacing: 0.115384615em;
+  }
+
+  &__tag {
+    margin-right: $space-xs;
+  }
 }

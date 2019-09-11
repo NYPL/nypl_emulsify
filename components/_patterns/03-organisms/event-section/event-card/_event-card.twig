@@ -48,8 +48,12 @@
   <div {{ bem('date', [], event_card__base_class) }}>
     {{ start_date }} - {{ event_card__date__end|date(event_date) }}
   </div>
-  {{ event_card__library_name }}
-  {% for tag in event_card__tags %}
-    {{ tag }}
-  {% endfor %}
+  <div {{ bem('library', [], event_card__base_class) }}>
+    {{ event_card__library_name }}
+  </div>
+  <div {{ bem('tags', [], event_card__base_class) }}>
+    {% for tag in event_card__tags %}
+      <span {{ bem('tag', [], event_card__base_class) }}>{{ tag }}</span>
+    {% endfor %}
+  </div>
 </div>
