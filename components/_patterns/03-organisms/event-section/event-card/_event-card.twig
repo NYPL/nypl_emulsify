@@ -15,9 +15,42 @@
  # - event_card__image - Whether or not to display an image.
  #}
 
-{% set event_date = 'F jS' %}
+{# Date/Time formats used in this file #}
+{% set format__short = 'F jS' %}         {# December 9th #}
+{% set format__long = 'l, F jS g:i A' %} {# Thursday, December 9th 5:30 PM #}
+{% set format__time_only = 'g:i A' %}    {# 6:30 PM #}
+{% set format__compare = 'Y/m/d' %}
 
-{% set start_date = event_card__date__start|date('Y/m/d') < 'now'|date('Y/m/d') ? 'Now' : event_card__date__start|date(event_date) %}
+{# Check whether the date is today or in the future (Used below to decide whether or not to render the markup #}
+{% if (event_card__date__start|date(format__compare) >= 'now'|date(format__compare)) or (event_card__date__end|date(format__compare) >= 'now'|date(format__compare)) %}
+  {% set event_card__date__in_future = true %}
+{% endif %}
+
+{# Calculate the proper date format to use in the following situations #}
+{# If ongoing #}
+{% if ongoing == true %}
+  {% set event_card__date = 'Ongoing' %}
+{# If no end date provided OR the start and end dates are the same, down to the minute #}
+{# Single Day and Time #}
+{# Thursday, December 9th 5:30 PM #}
+{% elseif not event_card__date__end or event_card__date__end|date(format__long) == event_card__date__start|date(format__long) %}
+  {% set event_card__date = event_card__date__start|date(format__long) %}
+{# If end date is the same as the start date (but with different times) #}
+{# Single Day, Multiple Times #}
+{# Thursday, December 9th 5:30 PM - 6:30 PM #}
+{% elseif event_card__date__end|date(format__compare) == event_card__date__start|date(format__compare) %}
+  {% set event_card__date = event_card__date__start|date(format__long) ~ ' - ' ~ event_card__date__end|date(format__time_only) %}
+{# Elseif start < now AND end > now #}
+{# Multi-day - In-progress #}
+{# Now - December 9th #}
+{% elseif (event_card__date__start|date(format__compare) < 'now'|date(format__compare)) and (event_card__date__end|date(format__compare) > 'now'|date(format__compare)) %}
+  {% set event_card__date = 'Now - ' ~ event_card__date__end|date(format__short) %}
+{# Else #}
+{# Multi-day - Future Start Date #}
+{# December 1st - December 9th #}
+{% else %}
+  {% set event_card__date = event_card__date__start|date(format__short) ~ ' - ' ~ event_card__date__end|date(format__short) %}
+{% endif %}
 
 {% set event_card__base_class = 'event-card' %}
 
@@ -53,9 +86,11 @@
         {{ event_card__status }}
       </div>
     {% endif %}
-    <div {{ bem('date', [], event_card__base_class) }}>
-      {{ start_date }} - {{ event_card__date__end|date(event_date) }}
-    </div>
+    {% if event_card__date__in_future %}
+      <div {{ bem('date', [], event_card__base_class) }}>
+        {{ event_card__date }}
+      </div>
+    {% endif %}
     <div {{ bem('library', [], event_card__base_class) }}>
       {{ event_card__library_name }}
     </div>
