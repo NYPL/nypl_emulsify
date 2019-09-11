@@ -1,4 +1,25 @@
+{#
+ # Variables:
+ # - event_card__date__ongoing - Whether or not the event is ongoing.
+ # - event_card__date__start - The event's start date.
+ # - event_card__date__end - The event's end date.
+ # - event_card__heading - The heading of the event.
+ # - event_card__library_name - The library's name.
+ # - event_card__tags - An array of tags.
+ #
+ # Blocks:
+ # - event_card__image - Used to replace the image with a responsive one from Drupal.
+ #
+ # Conditions:
+ # - event_card__image - Whether or not to display an image.
+ #}
+
+{% set event_date = 'F jS' %}
+
+{% set start_date = event_card__date__start|date('Y/m/d') < 'now'|date('Y/m/d') ? 'Now' : event_card__date__start|date(event_date) %}
+
 {% set event_card__base_class = 'event-card' %}
+
 <div {{ bem(event_card__base_class) }}>
   {% if event_card__image %}
     <div {{ bem('image', [], event_card__base_class) }}>
@@ -24,8 +45,9 @@
     heading_blockname: event_card__base_class,
     heading: event_card__heading,
   } %}
-  {{ event_card__date__start }}
-  {{ event_card__date__end }}
+  <div {{ bem('date', [], event_card__base_class) }}>
+    {{ start_date }} - {{ event_card__date__end|date(event_date) }}
+  </div>
   {{ event_card__library_name }}
   {% for tag in event_card__tags %}
     {{ tag }}
