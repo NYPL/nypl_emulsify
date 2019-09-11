@@ -13,9 +13,11 @@
       link_content: event_section__heading_link__text,
     } %}
   </div>
-  <div {{ bem('intro', [], event_section__base_class) }}>
-    {{ event_section__intro_text }}
-  </div>
+  {% if event_section__intro_text %}
+    <div {{ bem('intro', [], event_section__base_class) }}>
+      {{ event_section__intro_text }}
+    </div>
+  {% endif %}
   <div {{ bem('events', [], event_section__base_class) }}>
     {% for event in events %}
       <div {{ bem('event', [], event_section__base_class) }}>
