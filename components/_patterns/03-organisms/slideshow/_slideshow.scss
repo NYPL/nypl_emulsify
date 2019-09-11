@@ -90,24 +90,42 @@
 .slideshow__carousel {
   border-top: 1px solid $gray-light;
   border-bottom: 1px solid $gray-light;
-  padding: $space-l 0;
+
+  // The nested selectors here are all to support the "zoom" effect of the current slide.
+  .slick-list {
+    // Slick defines `padding: x y` dynamically via js, even though it only affects the left/right padding.
+    // We need to add top/bottom padding. Therefor, we have to use !important here. :(
+    padding-top: $space-s !important;
+    padding-bottom: $space-s !important;
+  }
+
+  .slick-track {
+    margin: $space-m 0;
+  }
+
+  .slick-current {
+    transform: scale(1.25);
+    box-shadow: 0 0 0 0.25rem $gray-dark;
+  }
 }
 
 .slideshow__carousel-item {
-  margin: 0 $space-xs;
+  border: 0.5rem solid $white;
 }
 
 // Styles only for Pattern Lab.
 // These will never be used on the site.
 .pl {
-  .slideshow__navigation {
-    .slick-track {
-      // This is to kind of "fake" the carousel image sizes since we don't have anything
-      // like Drupal doing image manipulation (scaling and cropping) for us.
-      // It's still not perfect, but gets the images closer to the aspect ratio that
-      // they will be on the site.
-      max-height: 157px;
-      overflow: hidden;
+  #organisms-slideshow-variable-dimensions {
+    .slideshow__navigation {
+      .slick-track {
+        // This is to kind of "fake" the carousel image sizes since we don't have anything
+        // like Drupal doing image manipulation (scaling and cropping) for us.
+        // It's still not perfect, but gets the images closer to the aspect ratio that
+        // they will be on the site.
+        max-height: 157px;
+        overflow: hidden;
+      }
     }
   }
 }
