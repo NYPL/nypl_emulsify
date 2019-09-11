@@ -4,6 +4,7 @@
  # - event_card__date__start - The event's start date.
  # - event_card__date__end - The event's end date.
  # - event_card__heading - The heading of the event.
+ # - event_card__status - The status of the event.
  # - event_card__library_name - The library's name.
  # - event_card__tags - An array of tags.
  #
@@ -47,6 +48,11 @@
       heading_blockname: event_card__base_class,
       heading: event_card__heading,
     } %}
+    {% if event_card__status %}
+      <div {{ bem('status', [], event_card__base_class) }}>
+        {{ event_card__status }}
+      </div>
+    {% endif %}
     <div {{ bem('date', [], event_card__base_class) }}>
       {{ start_date }} - {{ event_card__date__end|date(event_date) }}
     </div>

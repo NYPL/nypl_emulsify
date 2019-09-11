@@ -11,6 +11,20 @@
     margin: 0 0 $space-s;
   }
 
+  &__status {
+    display: inline-block;
+    border: 1px solid $gray-light;
+    background-color: $nypl-yellow-regular;
+    padding: 0 $space-xs;
+    margin-bottom: $space-s;
+    min-width: 9.25rem;
+    text-transform: uppercase;
+    color: $white;
+    text-align: center;
+    font-size: 0.8125rem;
+    letter-spacing: 0.115384615em;
+  }
+
   &__date {
     margin-bottom: $space-xs;
     letter-spacing: 0.0275em;
