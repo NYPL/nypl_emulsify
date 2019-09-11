@@ -1,0 +1,19 @@
+// These styles are strictly for Pattern Lab use. They will have no effect on the live site.
+.pl {
+  #icons {
+    display: flex;
+    flex-wrap: wrap;
+
+    & > div {
+      border: 1px solid #eee;
+      margin-right: 1em;
+      padding: 1em;
+      text-align: center;
+    }
+
+    .icon {
+      height: 4rem;
+      width: 4rem;
+    }
+  }
+}
