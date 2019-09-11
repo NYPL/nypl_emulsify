@@ -1,0 +1,20 @@
+.event-section {
+  &__heading-section {
+    margin-bottom: $space-m;
+  }
+
+  &__heading {
+    display: inline;
+    margin-right: $space-xs;
+  }
+
+  &__intro {
+    margin-bottom: $space-m;
+  }
+
+  &__event {
+    & + & {
+      margin-top: $space-s;
+    }
+  }
+}

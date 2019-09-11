@@ -1,0 +1,33 @@
+{% set event_section__base_class = 'event-section' %}
+
+<div {{ bem(event_section__base_class) }}>
+  <div {{ bem('heading-section', [], event_section__base_class) }}>
+    {% include "@atoms/02-text/00-headings/_heading.twig" with {
+      heading_level: '2',
+      heading_base_class: 'heading',
+      heading_blockname: event_section__base_class,
+      heading: event_section__heading,
+    } %}
+    {% include "@atoms/01-links/link/link.twig" with {
+      link_url: event_section__heading_link__url,
+      link_content: event_section__heading_link__text,
+    } %}
+  </div>
+  <div {{ bem('intro', [], event_section__base_class) }}>
+    {{ event_section__intro_text }}
+  </div>
+  <div {{ bem('events', [], event_section__base_class) }}>
+    {% for event in events %}
+      <div {{ bem('event', [], event_section__base_class) }}>
+        {% include "@organisms/event-section/event-card/_event-card.twig" with {
+          event_card__image: event.event_card__image,
+          event_card__heading: event.event_card__heading,
+          event_card__date__start: event.event_card__date__start,
+          event_card__date__end: event.event_card__date__end,
+          event_card__library_name: event.event_card__library_name,
+          event_card__tags: event.event_card__tags,
+        } %}
+      </div>
+    {% endfor %}
+  </div>
+</div>

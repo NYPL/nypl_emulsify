@@ -1,0 +1,32 @@
+event_section__heading: 'Community Showcase'
+event_section__heading_link__text: 'See all'
+event_section__heading_link__url: '#'
+event_section__intro_text: 'Community Showcases are presentations of different sizes at select branch locations in the Bronx, Manhattan, and Staten Island that speak to community interests and highlight the work of groups, organizations, and individuals.'
+events:
+  - event_card__image: true
+    event_card__heading: 'Lorem Ipsum Dolor Simete Long Title Lorem Ipsum Dolor Lorem Long Title'
+    event_card__date__start: '2019-08-17 12:00:00'
+    event_card__date__end: '2119-12-09 12:00:00'
+    event_card__library_name: 'Very Long Lorem Ipsum Long Library Name'
+    event_card__tags:
+      - '#Kidslive'
+      - '#Kidslive'
+      - '#Kidslive'
+  - event_card__image: true
+    event_card__heading: 'Lorem Ipsum Dolor Simete Long Title Lorem Ipsum Dolor Lorem Long Title'
+    event_card__date__start: '2019-08-17 12:00:00'
+    event_card__date__end: '2119-12-09 12:00:00'
+    event_card__library_name: 'Very Long Lorem Ipsum Long Library Name'
+    event_card__tags:
+      - '#Kidslive'
+      - '#Kidslive'
+      - '#Kidslive'
+  - event_card__image: true
+    event_card__heading: 'Lorem Ipsum Dolor Simete Long Title Lorem Ipsum Dolor Lorem Long Title'
+    event_card__date__start: '2019-08-17 12:00:00'
+    event_card__date__end: '2119-12-09 12:00:00'
+    event_card__library_name: 'Very Long Lorem Ipsum Long Library Name'
+    event_card__tags:
+      - '#Kidslive'
+      - '#Kidslive'
+      - '#Kidslive'
