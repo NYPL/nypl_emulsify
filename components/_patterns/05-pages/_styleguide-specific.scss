@@ -17,19 +17,24 @@
   }
 
   #icons {
-    display: flex;
-    flex-wrap: wrap;
-
     & > div {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    & > div > div {
       border: 1px solid #eee;
       margin-right: 1em;
+      margin-bottom: 1em;
       padding: 1em;
       text-align: center;
     }
 
-    .icon {
-      height: 4rem;
-      width: 4rem;
+    .icons-all {
+      .icon {
+        height: 4rem;
+        width: 4rem;
+      }
     }
   }
 }
