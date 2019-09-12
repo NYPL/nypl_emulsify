@@ -72,6 +72,8 @@
 }
 
 .slideshow__nav-icon {
+  @include icon;
+
   position: relative;
   height: 15px;
   width: 15px;
@@ -82,7 +84,6 @@
 
   &--next {
     left: 0.3rem;
-    transform: rotate(180deg);
   }
 }
 
