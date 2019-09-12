@@ -1,0 +1,22 @@
+.date-tile {
+  border-radius: 2px;
+  border: 1px solid $black;
+  display: inline-flex;
+  min-height: 60px;
+  padding: $space-xxs $space-s;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.date-tile__separator {
+  padding: 0 $space-s;
+}
+
+.date-tile__month {
+  font-size: 0.875rem;
+}
+
+.date-tile__day {
+  font-weight: 600;
+}
