@@ -16,7 +16,7 @@
 {% set button_base_class = button_base_class|default('button') %}
 
 <button
-  {{ bem(button_base_class, (button_modifiers), button_blockname) }}
+  {{ bem(button_base_class, button_modifiers, button_blockname) }}
   {% for attribute,value in button_attributes %}
     {{ attribute }}="{{ value }}"
   {% endfor %}
