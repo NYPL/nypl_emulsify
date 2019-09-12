@@ -39,6 +39,7 @@ items:
   - icon_name: 'search-small'
   - icon_name: 'plus'
   - icon_name: 'minus'
+  - icon_name: 'cancel'
   - icon_name: 'check'
   - icon_name: 'book'
     decorative: 'true'
