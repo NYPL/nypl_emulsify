@@ -7,7 +7,7 @@
   <div {{ bem('viewer', [], slideshow__base_class) }}>
     {% for slide in slides %}
       <div>
-        {% include "@atoms/04-images/00-image/responsive-image.twig" with {
+        {% include "@atoms/images/image/responsive-image.twig" with {
           output_image_tag: true,
           img_src: slide.img_src,
         } %}
@@ -24,7 +24,7 @@
             {{ slide.img_title }}
           </span>
           {% if slide.image_collection_link %}
-            {% include "@atoms/01-links/link/link.twig" with {
+            {% include "@atoms/links/link/link.twig" with {
               link_base_class: 'image-collection-link',
               link_blockname: slideshow__base_class,
               link_url: slide.image_collection_link,
@@ -44,7 +44,7 @@
   <div {{ bem('navigation', [], slideshow__base_class) }}>
     {# Previous Arrow #}
     <div {{ bem('nav', (['prev']), slideshow__base_class) }}>
-      {% include "@atoms/04-images/icons/_icon.twig" with {
+      {% include "@atoms/images/icons/_icon.twig" with {
         icon_name: 'left-arrow',
         icon_base_class: 'nav-icon',
         icon_modifiers: ['prev'],
@@ -54,7 +54,7 @@
 
     {# Next Arrow #}
     <div {{ bem('nav', (['next']), slideshow__base_class) }}>
-      {% include "@atoms/04-images/icons/_icon.twig" with {
+      {% include "@atoms/images/icons/_icon.twig" with {
         icon_name: 'left-arrow',
         icon_base_class: 'nav-icon',
         icon_modifiers: ['next'],
@@ -65,7 +65,7 @@
     {# Carousel #}
     <div {{ bem('carousel', [], slideshow__base_class) }}>
       {% for slide in slides %}
-        {% include "@atoms/04-images/00-image/responsive-image.twig" with {
+        {% include "@atoms/images/image/responsive-image.twig" with {
           responsive_image_base_class: 'carousel-item',
           responsive_image_blockname: slideshow__base_class,
           output_image_tag: true,
