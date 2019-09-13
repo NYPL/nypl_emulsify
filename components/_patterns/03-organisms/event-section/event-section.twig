@@ -2,13 +2,13 @@
 
 <div {{ bem(event_section__base_class) }}>
   <div {{ bem('heading-section', [], event_section__base_class) }}>
-    {% include "@atoms/02-text/00-headings/_heading.twig" with {
+    {% include "@atoms/text/headings/_heading.twig" with {
       heading_level: '2',
       heading_base_class: 'heading',
       heading_blockname: event_section__base_class,
       heading: event_section__heading,
     } %}
-    {% include "@atoms/01-links/link/link.twig" with {
+    {% include "@atoms/links/link/link.twig" with {
       link_url: event_section__heading_link__url,
       link_content: event_section__heading_link__text,
     } %}

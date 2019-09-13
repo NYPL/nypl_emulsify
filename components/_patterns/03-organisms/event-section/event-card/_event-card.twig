@@ -59,7 +59,7 @@
     <div {{ bem('image', [], event_card__base_class) }}>
       {% block event_card__image %}
         {# This part's just for pattern lab. Drupal will replace the whole block #}
-        {% include "@atoms/04-images/00-image/responsive-image.twig" with {
+        {% include "@atoms/images/image/responsive-image.twig" with {
           img_srcset: image.four_by_three.responsive.srcset,
           img_sizes: image.four_by_three.responsive.sizes,
           img_src: image.four_by_three.responsive.src,
@@ -75,7 +75,7 @@
     </div>
   {% endif %}
   <div {{ bem('content', [], event_card__base_class) }}>
-    {% include "@atoms/02-text/00-headings/_heading.twig" with {
+    {% include "@atoms/text/headings/_heading.twig" with {
       heading_level: '3',
       heading_base_class: 'heading',
       heading_blockname: event_card__base_class,
