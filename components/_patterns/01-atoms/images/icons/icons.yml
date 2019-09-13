@@ -8,6 +8,9 @@ items:
   - icon_name: 'arrow-xsmall'
     icon_modifiers:
       - 'up'
+  - icon_name: 'arrow-xsmall-thin'
+    icon_modifiers:
+      - 'up'
   - icon_name: 'arrow'
     icon_modifiers:
       - 'right'
@@ -17,6 +20,9 @@ items:
   - icon_name: 'arrow-xsmall'
     icon_modifiers:
       - 'right'
+  - icon_name: 'arrow-xsmall-thin'
+    icon_modifiers:
+      - 'right'
   - icon_name: 'arrow'
     icon_modifiers:
       - 'down'
@@ -24,6 +30,9 @@ items:
     icon_modifiers:
       - 'down'
   - icon_name: 'arrow-xsmall'
+    icon_modifiers:
+      - 'down'
+  - icon_name: 'arrow-xsmall-thin'
     icon_modifiers:
       - 'down'
   - icon_name: 'arrow'
@@ -33,6 +42,9 @@ items:
     icon_modifiers:
       - 'left'
   - icon_name: 'arrow-xsmall'
+    icon_modifiers:
+      - 'left'
+  - icon_name: 'arrow-xsmall-thin'
     icon_modifiers:
       - 'left'
   - icon_name: 'search'
