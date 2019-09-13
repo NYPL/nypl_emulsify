@@ -8,12 +8,12 @@ We are using a gulp SVG sprite generator (details [here](https://una.im/svg-icon
 
 **Usage**
 
-The SVG component is found here: `/components/_patterns/01-atoms/04-images/icons/_icon.twig`. See available variables in that file as well as instructions for Drupal. Examples of usage below:
+The SVG component is found here: `/components/_patterns/atoms/images/icons/_icon.twig`. See available variables in that file as well as instructions for Drupal. Examples of usage below:
 
 Simple: (no BEM renaming)
 
 ```
-{% include "@atoms/04-images/icons/_icon.twig" with {
+{% include "@atoms/images/icons/_icon.twig" with {
   icon_name: 'bars',
 } %}
 ```
@@ -29,7 +29,7 @@ Simple: (no BEM renaming)
 Complex (BEM classes):
 
 ```
-{% include "@atoms/04-images/icons/_icon.twig" with {
+{% include "@atoms/images/icons/_icon.twig" with {
   icon_base_class: 'icon',
   icon_blockname: 'toggle-expand',
   icon_name: 'bars',
