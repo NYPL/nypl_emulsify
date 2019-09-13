@@ -5,7 +5,7 @@ global:
 
 main-menu:
   js:
-    components/_patterns/02-molecules/menus/main-menu/main-menu.js: {}
+    dist/02-molecules/menus/main-menu/main-menu.js: {}
   dependencies:
     - core/drupal
 
@@ -15,8 +15,13 @@ sprite:
 
 accordion:
   js:
-    components/_patterns/02-molecules/accordion-item/accordion-item.js: {}
+    dist/02-molecules/accordion-item/accordion-item.js: {}
 
 tabs:
   js:
-    components/_patterns/02-molecules/menus/tabs/tabs.js: {}
+    dist/02-molecules/menus/tabs/tabs.js: {}
+
+slideshow:
+  js:
+    dist/03-organisms/slideshow/slideshow.js: {}
+    components/js/slick/slick.min.js: { minified: true }

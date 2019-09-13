@@ -14,9 +14,7 @@
     background-color: $gray-dark;
 
     a {
-      @include wrapper(
-        $v-padding: $space
-      );
+      @include wrapper($v-padding: $space);
 
       display: block;
       color: $white;
@@ -25,8 +23,16 @@
     }
   }
 
-  .sg-pattern > div {
-    @include wrapper;
+  .patternLink {
+    color: $black;
+  }
+
+  .sg-pattern {
+    clear: left;
+
+    & > div {
+      @include wrapper;
+    }
   }
 
   .sg-pattern-title {
