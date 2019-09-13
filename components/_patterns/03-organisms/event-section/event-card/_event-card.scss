@@ -14,15 +14,15 @@
   &__status {
     display: inline-block;
     border: 1px solid $gray-light;
-    background-color: $nypl-yellow-regular;
+    background-color: $gray-xxlight;
     padding: 0 $space-xs;
     margin-bottom: $space-s;
-    min-width: 9.25rem;
+    min-width: 6.5rem;
     text-transform: uppercase;
-    color: $white;
+    color: $color-error;
     text-align: center;
-    font-size: 0.8125rem;
-    letter-spacing: 0.115384615em;
+    font-size: 0.75rem;
+    letter-spacing: 0.005833333em;
   }
 
   &__date {
