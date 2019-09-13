@@ -3,6 +3,11 @@
     position: relative; // This supports positioning the date-tile
   }
 
+  &__no-image {
+    background: purple;
+    height: 0.5rem;
+  }
+
   &__content {
     padding: $space-s;
   }

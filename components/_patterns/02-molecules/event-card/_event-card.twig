@@ -73,6 +73,8 @@
         date_tile__end_date: event_card__date__end,
       } %}
     </div>
+  {% else %}
+    <div {{ bem('no-image', [], event_card__base_class) }}></div>
   {% endif %}
   <div {{ bem('content', [], event_card__base_class) }}>
     {% include "@atoms/text/headings/_heading.twig" with {
