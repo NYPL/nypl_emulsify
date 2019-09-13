@@ -18,10 +18,10 @@
       {{ event_section__intro_text }}
     </div>
   {% endif %}
-  <div {{ bem('events', [], event_section__base_class) }}>
+  <ul {{ bem('events', [], event_section__base_class) }}>
     {% for event in events %}
-      <div {{ bem('event', [], event_section__base_class) }}>
-        {% include "@organisms/event-section/event-card/_event-card.twig" with {
+      <li {{ bem('event', [], event_section__base_class) }}>
+        {% include "@molecules/event-card/_event-card.twig" with {
           event_card__image: event.event_card__image,
           event_card__heading: event.event_card__heading,
           event_card__date__start: event.event_card__date__start,
@@ -29,7 +29,7 @@
           event_card__library_name: event.event_card__library_name,
           event_card__tags: event.event_card__tags,
         } %}
-      </div>
+      </li>
     {% endfor %}
-  </div>
+  </ul>
 </div>
