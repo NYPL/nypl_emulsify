@@ -28,6 +28,8 @@ $color-link--hover: $nypl-blue-dark;
     @include icon;
 
     margin-left: $space-xxs;
+    height: 1rem;
+    width: 1rem;
   }
 }
 

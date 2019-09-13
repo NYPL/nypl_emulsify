@@ -17,7 +17,7 @@
 {% endif %}
 {# Directions Link #}
 {% if address_bar__directions_url %}
-  {% include "@atoms/links/link/link.twig" with {
+  {% include "@atoms/links/link/more-link.twig" with {
     link_base_class: 'directions',
     link_content: 'Directions',
     link_url: address_bar__directions_url,

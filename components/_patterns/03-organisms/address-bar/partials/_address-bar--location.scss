@@ -8,7 +8,7 @@
   }
 
   &__directions {
-    @include link--more;
+    @include more-link;
     @include address-bar-vertical-spacing;
   }
 
