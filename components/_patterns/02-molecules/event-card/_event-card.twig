@@ -5,6 +5,7 @@
  # - event_card__date__end - The event's end date.
  # - event_card__heading - The heading of the event.
  # - event_card__status - The status of the event.
+ # - event_card__description - A short description about the event.
  # - event_card__library_name - The library's name.
  # - event_card__tags - An array of tags.
  #
@@ -66,12 +67,14 @@
           img_alt: image.four_by_three.responsive.alt,
         } %}
       {% endblock %}
-      {% include "@molecules/date-tile/date-tile.twig" with {
-        date_tile__modifiers: ['floated'],
-        ongoing: event_card__date__ongoing,
-        date_tile__start_date: event_card__date__start,
-        date_tile__end_date: event_card__date__end,
-      } %}
+      {% if event_card__date__in_future %}
+        {% include "@molecules/date-tile/date-tile.twig" with {
+          date_tile__modifiers: ['floated'],
+          ongoing: event_card__date__ongoing,
+          date_tile__start_date: event_card__date__start,
+          date_tile__end_date: event_card__date__end,
+        } %}
+      {% endif %}
     </div>
   {% else %}
     <div {{ bem('no-image', [], event_card__base_class) }}></div>
@@ -86,6 +89,11 @@
     {% if event_card__status %}
       <div {{ bem('status', [], event_card__base_class) }}>
         {{ event_card__status }}
+      </div>
+    {% endif %}
+    {% if not event_card__date__in_future %}
+      <div {{ bem('description', [], event_card__base_class) }}>
+        {{ event_card__description }}
       </div>
     {% endif %}
     {% if event_card__date__in_future %}
