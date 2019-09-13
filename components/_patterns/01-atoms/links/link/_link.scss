@@ -10,36 +10,24 @@ $color-link--hover: $nypl-blue-dark;
   }
 }
 
-@mixin link--more {
-  display: inline-block;
-  position: relative;
-  padding-right: 1em;
+@mixin more-link {
+  display: inline-flex;
+  flex-flow: row nowrap;
   color: $color-link;
   text-decoration: none;
   font-size: 0.875em;
   line-height: 1.21;
   letter-spacing: 0.107142857em;
 
-  &::after {
-    display: block;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%) rotate(45deg);
-    right: 0.3em;
-    content: '';
-    border: 2px solid $color-link;
-    border-bottom: 0;
-    border-left: 0;
-    height: 0.5em;
-    width: 0.5em;
-  }
-
   &:hover {
     color: $color-link--hover;
+    text-decoration: underline;
+  }
 
-    &::after {
-      border-color: $color-link--hover;
-    }
+  &__icon {
+    @include icon;
+
+    margin-left: $space-xxs;
   }
 }
 
@@ -47,6 +35,6 @@ $color-link--hover: $nypl-blue-dark;
   @include link;
 }
 
-.link--more {
-  @include link--more;
+.more-link {
+  @include more-link;
 }

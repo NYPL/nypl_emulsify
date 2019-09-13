@@ -13,7 +13,7 @@
  *     Example: to insert the image component
  */
 #}
-{% set link_base_class = link_base_class|default('link') %}
+{% set link_base_class = link_base_class|default('more-link') %}
 
 <a
   {{ bem(link_base_class, link_modifiers, link_blockname) }}
@@ -24,5 +24,10 @@
 >
   {% block link_content %}
     {{ link_content }}
+    {% include "@atoms/images/icons/_icon.twig" with {
+      icon_name: 'arrow-xsmall',
+      icon_blockname: link_base_class,
+      icon_modifiers: ['right', 'small'],
+    } %}
   {% endblock %}
 </a>
