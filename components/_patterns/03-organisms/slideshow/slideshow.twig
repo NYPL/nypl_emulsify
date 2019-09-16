@@ -45,9 +45,9 @@
     {# Previous Arrow #}
     <div {{ bem('nav', (['prev']), slideshow__base_class) }}>
       {% include "@atoms/images/icons/_icon.twig" with {
-        icon_name: 'left-arrow',
+        icon_name: 'arrow-xsmall-thin',
         icon_base_class: 'nav-icon',
-        icon_modifiers: ['prev'],
+        icon_modifiers: ['prev', 'left'],
         icon_blockname: slideshow__base_class
       } %}
     </div>
@@ -55,9 +55,9 @@
     {# Next Arrow #}
     <div {{ bem('nav', (['next']), slideshow__base_class) }}>
       {% include "@atoms/images/icons/_icon.twig" with {
-        icon_name: 'left-arrow',
+        icon_name: 'arrow-xsmall-thin',
         icon_base_class: 'nav-icon',
-        icon_modifiers: ['next'],
+        icon_modifiers: ['next', 'right'],
         icon_blockname: slideshow__base_class
       } %}
     </div>

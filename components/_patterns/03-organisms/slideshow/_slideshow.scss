@@ -72,17 +72,18 @@
 }
 
 .slideshow__nav-icon {
+  @include icon;
+
   position: relative;
-  height: 15px;
-  width: 15px;
+  height: 12px;
+  width: 12px;
 
   &--prev {
-    left: 0.15rem;
+    left: 0.25rem;
   }
 
   &--next {
-    left: 0.3rem;
-    transform: rotate(180deg);
+    left: 0.35rem;
   }
 }
 
