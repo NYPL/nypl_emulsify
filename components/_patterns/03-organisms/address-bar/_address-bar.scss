@@ -1,0 +1,18 @@
+$address-bar-border: 1px solid $gray-light;
+
+@mixin address-bar-vertical-spacing {
+  margin-bottom: $space;
+}
+
+.address-bar {
+  &__content {
+    border-right: $address-bar-border;
+    border-bottom: $address-bar-border;
+    border-left: $address-bar-border;
+    padding: $space-s;
+
+    > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,14 +1,23 @@
-@mixin button($bg:$black, $color:$white, $hoverBg: $gray-medium, $hoverColor: $white) {
+@mixin button-base {
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  letter-spacing: 1.5px;
+  padding: $space-xs;
+  text-decoration: none;
+  text-align: center;
+}
+
+@mixin button--filled(
+  $bg: $nypl-blue-regular,
+  $color: $white,
+  $hoverBg: darken($bg, 0.25)
+) {
+  @include button-base;
+
   background-color: $bg;
   border: none;
   color: $color;
-  cursor: pointer;
-  line-height: 1.4;
-  padding: 0.5em 1em;
-  display: inline-block;
-  text-decoration: none;
-  text-align: center;
-  text-transform: uppercase;
 
   &:visited {
     color: $color;
@@ -19,32 +28,26 @@
   }
 }
 
-@mixin button-alt {
-  @include button($gray-medium, $white, $black);
+@mixin button--outline {
+  @include button-base;
 
-  font-weight: 600;
-  font-size: 0.7rem;
-  padding: 0.4em 0.6em 0.3em;
-}
+  background-color: $white;
+  border: 1px solid $gray-light;
+  color: inherit;
 
-@mixin button-alt-2 {
-  @include button($gray-xxlight, $black, $gray-xlight);
+  &:visited {
+    color: inherit;
+  }
 
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-transform: none;
+  &:hover {
+    background-color: $gray-xxlight;
+  }
 }
 
 .button {
-  @include button;
+  @include button--filled;
+}
 
-  &--alt {
-    @include button;
-    @include button-alt;
-  }
-
-  &--alt-2 {
-    @include button;
-    @include button-alt-2;
-  }
+.button--outline {
+  @include button--outline;
 }
