@@ -1,5 +1,5 @@
 catalog_item__media_type:
-  "book"
+  "audiobook"
 
 catalog_item__title:
   "The Anna Atkins volumes Long Title That Wraps [electronic resource]"
@@ -10,11 +10,7 @@ catalog_item__author:
 catalog_item__year:
   "1999"
 
-type_of_file:
-  "File type"
+catalog_item__availability_level:
+  "Available onsite at specific locations."
 
-availability:
-  true
-
-
-catalog_item__link__url:
+catalog_item__link__url: '#'

@@ -7,18 +7,26 @@
 
 {% set catalog_item_base_class = 'catalog-item' %}
 
+{% if catalog_item__media_type == 'electronic resource' %}
+  {% set catalog_item__icon = 'computer' %}
+{% elseif catalog_item__media_type == 'music' or 'audiobook' %}
+  {% set catalog_item__icon = 'cd' %}
+{% else %}
+  {% set catalog_item__icon = catalog_item__media_type  %}
+{% endif %}
+
 <li {{ bem(catalog_item_base_class, (catalog_item_modifiers), catalog_blockname) }}>
-  <div {{ bem('icon', [catalog_item__media_type], catalog_item_base_class) }}>
-    {% if image is defined %}
-      {% block catalog_item__image %}
-        {% include "@atoms/04-images/00-image/responsive-image.twig" with {
-          output_image_tag: true,
-          img_src: catalog_item__image_src,
-        } %}
-      {% endblock %}
+  <div {{ bem('icon', [], catalog_item_base_class) }}>
+    {% if catalog_item__image %}
+      {# {% block catalog_item__image %} #}
+      {% include "@atoms/04-images/00-image/responsive-image.twig" with {
+        output_image_tag: true,
+        img_src: catalog_item__image_src,
+      } %}
+      {# {% endblock %} #}
     {% else %}
       {% include "@atoms/images/icons/_icon.twig" with {
-        icon_name: catalog_item__media_type,
+        icon_name: catalog_item__icon,
         icon_modifiers: ['xlarge'],
       } %}
     {% endif %}
@@ -27,11 +35,16 @@
   <div {{ bem('content', [], catalog_item_base_class) }}>
     <h3>{{ catalog_item__title }}</h3>
 
-    <span class="tag">{{ catalog_item__year }}</span>
+    <span class="tag">{{ catalog_item__year }}</span> | 
     <span class="tag">{{ catalog_item__media_type|title }}</span>
 
-    <div class="">By {{ catalog_item__author }}<div>
+    <div>By {{ catalog_item__author }}<div>
 
-    <p>Available onsite at specific locations. <a href="#" class="btn-text">View Detail<span class="icon icon-arrow-right blue"></span></a></p>
+    <p>{{ catalog_item__availability_level }}
+    {% include "@atoms/links/link/more-link.twig" with {
+      link_content: 'View Detail',
+      link_url: address_bar__directions_url,
+    } %}
+    </p>
   </div>
 </li>

@@ -1,36 +1,19 @@
-img:
-  src:
-    "#"
-  alt:
-    "alt"
+catalog_item__media_type:
+  "audiobook"
 
-media_type:
-  "book"
+catalog_item__title:
+  "The Anna Atkins volumes Long Title That Wraps [electronic resource]"
 
-title:
-  "Catalog item title"
+catalog_item__author:
+  "Jason McAuthor"
 
-author:
-  first:
-    "First"
-  last:
-    "Last"
+catalog_item__year:
+  "1999"
 
-year:
-  "Catalog item year"
+catalog_item__availability_level:
+  "Available onsite at specific locations."
 
-type_of_file:
-  "File type"
+catalog_item__link__url: '#'
 
-availability:
-  true
-
-detail_link:
-  "#"
-
-view_link:
-  "#"
-
-add_to_list_link:
-  "#"
-
+catalog_item__image: true
+catalog_item__image_src: 'https://placeimg.com/330/400/people'
