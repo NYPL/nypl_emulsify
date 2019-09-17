@@ -18,12 +18,12 @@
 <li {{ bem(catalog_item_base_class, (catalog_item_modifiers), catalog_blockname) }}>
   <div {{ bem('icon', [], catalog_item_base_class) }}>
     {% if catalog_item__image %}
-      {# {% block catalog_item__image %} #}
-      {% include "@atoms/04-images/00-image/responsive-image.twig" with {
-        output_image_tag: true,
-        img_src: catalog_item__image_src,
-      } %}
-      {# {% endblock %} #}
+      {% block catalog_item__image %}
+        {% include "@atoms/images/image/responsive-image.twig" with {
+          output_image_tag: true,
+          img_src: catalog_item__image_src,
+        } %}
+      {% endblock %}
     {% else %}
       {% include "@atoms/images/icons/_icon.twig" with {
         icon_name: catalog_item__icon,

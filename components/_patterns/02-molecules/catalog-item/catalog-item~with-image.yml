@@ -16,4 +16,4 @@ catalog_item__availability_level:
 catalog_item__link__url: '#'
 
 catalog_item__image: true
-catalog_item__image_src: 'https://placeimg.com/330/400/people'
+catalog_item__image_src: 'http://placeimg.com/400/300/arch'
