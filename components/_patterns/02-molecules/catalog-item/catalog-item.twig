@@ -8,7 +8,7 @@
 {% set catalog_item_base_class = 'catalog-item' %}
 
 <li {{ bem(catalog_item_base_class, (catalog_item_modifiers), catalog_blockname) }}>
-  <div {{ bem('icon', [media_type], catalog_item_base_class) }}>
+  <div {{ bem('icon', [catalog_item__media_type], catalog_item_base_class) }}>
     {% if image is defined %}
       {% block catalog_item__image %}
         {% include "@atoms/04-images/00-image/responsive-image.twig" with {
@@ -16,26 +16,22 @@
           img_src: catalog_item__image_src,
         } %}
       {% endblock %}
+    {% else %}
+      {% include "@atoms/images/icons/_icon.twig" with {
+        icon_name: catalog_item__media_type,
+        icon_modifiers: ['xlarge'],
+      } %}
     {% endif %}
   </div>
 
   <div {{ bem('content', [], catalog_item_base_class) }}>
-    <h3>{{ title|length > 50 ? title|slice(0, 50) ~ '...' : title }}</h3>
+    <h3>{{ catalog_item__title }}</h3>
 
-    <span class="tag">{{ year }}</span>
+    <span class="tag">{{ catalog_item__year }}</span>
+    <span class="tag">{{ catalog_item__media_type|title }}</span>
 
-    {% if media_type == 'cd' %}
-      <span class="tag">{{ media_type|upper }}</span>
-    {% else %}
-      <span class="tag">{{ media_type|title }}</span>
-    {% endif %}
-
-    <div class="">By {{ author.first }} {{ author.last }}</div>
+    <div class="">By {{ catalog_item__author }}<div>
 
     <p>Available onsite at specific locations. <a href="#" class="btn-text">View Detail<span class="icon icon-arrow-right blue"></span></a></p>
-  </div>
-
-  <div {{ bem('ctas', [], catalog_item_base_class) }}>
-    <button href="{{ how_to_view_link }}" aria-labelledby="{{ title }}, How to View" class="btn btn-outline fluid">How to View</button>
   </div>
 </li>

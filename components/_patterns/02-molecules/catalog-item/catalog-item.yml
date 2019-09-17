@@ -1,17 +1,14 @@
-media_type:
+catalog_item__media_type:
   "book"
 
-title:
-  "Catalog item title"
+catalog_item__title:
+  "The Anna Atkins volumes Long Title That Wraps [electronic resource]"
 
-author:
-  first:
-    "First"
-  last:
-    "Last"
+catalog_item__author:
+  "Jason McAuthor"
 
-year:
-  "Catalog item year"
+catalog_item__year:
+  "1999"
 
 type_of_file:
   "File type"
@@ -19,12 +16,5 @@ type_of_file:
 availability:
   true
 
-detail_link:
-  "#"
 
-view_link:
-  "#"
-
-add_to_list_link:
-  "#"
-
+catalog_item__link__url:
