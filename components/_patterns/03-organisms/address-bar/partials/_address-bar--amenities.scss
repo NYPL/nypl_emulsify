@@ -3,19 +3,10 @@
     @include address-bar-vertical-spacing;
 
     margin-top: 0;
-    padding: 0;
-    list-style-type: none;
+    padding: 0 0 0 1.05em;
   }
 
   &__amenity {
-    position: relative;
-    padding-left: $space-s;
     letter-spacing: 0.0275em;
-
-    &::before {
-      position: absolute;
-      left: 0;
-      content: '-';
-    }
   }
 }
